@@ -1,0 +1,82 @@
+% Mathematische Erweiterungen
+\usepackage{amsmath}  % Erweiterte Mathe-Darstellung
+\usepackage{amssymb}
+\usepackage{mathtools} % Ergänzungen zu amsmath
+\usepackage{physics}   % Nützliche Befehle für Physik
+% Grafiken und Abbildungen
+\usepackage{graphicx} % Für Grafiken
+\usepackage{tikz}     % Für hochwertige Diagramme und Zeichnungen
+\usepackage{pgfplots} % Für professionelle Plots
+\pgfplotsset{compat=1.17}
+
+% Layout und Hyperlinks
+\usepackage[margin=1in,letterpaper]{geometry} % Seitenränder und Papiergröße
+\usepackage[final]{hyperref} % Für Hyperlinks in der PDF
+\hypersetup{
+        hidelinks,
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=magenta,
+	urlcolor=blue
+}
+
+% Sprach- und Texterweiterungen
+\usepackage[ngerman, english]{babel} % Sprache auf Deutsch
+\usepackage{parskip} % Entfernt Einrückungen bei Absätzen
+
+% Intelligente Referenzen
+\usepackage{cleveref} % Für intelligente Querverweise
+
+% Bibliographie und Zitationen
+\usepackage[numbers]{natbib} % Für Zitationen im Stil von Physikartikeln
+
+% Code-Einbettung
+\usepackage{listings} % Für die Einbettung von Quellcode
+\usepackage{xcolor}   % Für erweiterte Farbcodierungen
+
+% Erweiterte Farbpalette und bessere Lesbarkeit
+\definecolor{background}{rgb}{0.15, 0.15, 0.15} % Dunkler Hintergrund
+\definecolor{foreground}{rgb}{0.9, 0.9, 0.9}    % Helle Schriftfarbe
+\definecolor{keywordcolor}{rgb}{0.98, 0.47, 0.24} % Leuchtendes Orange für Keywords
+\definecolor{stringcolor}{rgb}{0.68, 0.91, 0.65}  % Helles Grün für Strings
+\definecolor{commentcolor}{rgb}{0.5, 0.5, 0.5}    % Graue Kommentare
+\definecolor{identifiercolor}{rgb}{0.65, 0.85, 1.0} % Hellblau für Identifikatoren
+\definecolor{numbercolor}{rgb}{0.8, 0.8, 0.8}      % Graue Zeilennummern
+\definecolor{framecolor}{rgb}{0.25, 0.25, 0.25}    % Rahmenfarbe
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{background},   % Hintergrundfarbe
+    basicstyle=\ttfamily\small\color{foreground}, % Grundlegende Schriftart und Farbe
+    commentstyle=\color{commentcolor}\textit, % Kommentare kursiv und grau
+    keywordstyle=\color{keywordcolor}\bfseries, % Keywords fett und orange
+    stringstyle=\color{stringcolor},  % Strings grün
+    identifierstyle=\color{identifiercolor}, % Identifikatoren blau
+    numberstyle=\tiny\color{numbercolor}, % Zeilennummern grau und klein
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,                        % Tab-Breite
+    xleftmargin=15pt,                 % Rand links
+    frame=single,                     % Einzelner Rahmen um den Code
+    rulecolor=\color{framecolor},     % Rahmenfarbe
+    frameround=tttt,                  % Rahmen abgerundet
+    aboveskip=10pt,                   % Abstand nach oben
+    belowskip=10pt,                   % Abstand nach unten
+    morekeywords={input,include,print,println,repeat,until,local,function,end} % Zusätzliche Schlüsselwörter
+}
+
+\lstset{style=mystyle}
+
+\usepackage{float} %für Platzierungen
+% Laplace- und D'Alembert-Operatoren
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\newcommand*\Quabla{\mathop{}\!\mathbin\Box}
+
+% Inhaltsverzeichnis
+\renewcommand{\contentsname}{Inhaltsverzeichnis} % Überschrift des Inhaltsverzeichnisses auf Deutsch

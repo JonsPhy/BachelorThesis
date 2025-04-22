@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+
+% Stil-Datei laden
+\usepackage{style/thesis}
+
+% Metadaten
+\title{From Differentiable Manifolds to Gauge Fields\\\large Von differenzierbaren Mannigfaltigkeiten zu Eichfeldern}
+\author{Jonas von Stein}
+\date{\today}
+
+\begin{document}
+
+% Titelblatt ENGLISCH
+\selectlanguage{english}
+\begin{titlepage}
+    \centering
+    {\LARGE Bachelor Thesis \par}
+    \vspace{2cm}
+    {\Huge \bfseries From Differentiable Manifolds to Gauge Fields \par}
+    \vspace{1.5cm}
+    {\Large Jonas von Stein \par}
+    \vfill
+    \textit{Supervisor: Prof. Dr. Ivo Sachs}\\
+    \textit{Arnold Sommerfeld Center for Theoretical Physics \\ Ludwig-Maximilians-Universität Munich}\\
+    \vspace{1cm}
+    {\large \today\par}
+\end{titlepage}
+
+% Titelblatt DEUTSCH
+\selectlanguage{ngerman}
+\begin{titlepage}
+    \centering
+    {\LARGE Bachelorarbeit \par}
+    \vspace{2cm}
+    {\Huge \bfseries Von differenzierbaren Mannigfaltigkeiten zu Eichfeldern \par}
+    \vspace{1.5cm}
+    {\Large Jonas von Stein \par}
+    \vfill
+    \textit{Betreuer: Prof. Dr. Ivo Sachs}\\
+    \textit{Arnold Sommerfeld Center for Theoretical Physics \\ Ludwig-Maximilians-Universität Munich}\\
+    \vspace{1cm}
+    {\large \today\par}
+\end{titlepage}
+
+% Inhaltsverzeichnis
+\tableofcontents
+\newpage
+
+% Kapitel einbinden
+\input{content/01_intro}
+\input{content/02_manifolds}
+\input{content/03_bundles}
+\input{content/04_principal_bundles}
+\input{content/05_connections}
+\input{content/06_gauge_fields}
+\input{content/07_conclusion}
+
+% Literaturverzeichnis
+\bibliographystyle{unsrt} % oder alpha, plain, abbrvnat, etc.
+\bibliography{bibliography}
+
+\end{document}
