@@ -11,10 +11,14 @@
             "id": "ae1512b5c05cb501",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -163,6 +167,8 @@
   },
   "active": "ae1512b5c05cb501",
   "lastOpenFiles": [
+    "projects/BachelorThesis/Roadmap.md",
+    "index.md",
     "BachelorThesis/Welcome.md"
   ]
 }
