@@ -1,0 +1,29 @@
+\section{Manifolds}
+
+
+\subsection{Spacetime Manifold $\mathcal{M}$}\label{sec:spacetime-manifold}
+
+Let $\mathcal{M} := \mathbb{R}^4$, the set of ordered 4-tuples $(x^\mu) \in \mathbb{R}^4$.
+
+We equip $\mathcal{M}$ with the standard topology (open sets are open balls):
+
+\[
+B_r(p) := \{ x \in \mathbb{R}^4 \mid \|x - p\| < r \}
+\]
+
+with $\| \cdot \|$ the Euclidean norm:
+\[
+\|x\|^2 = \sum_{\mu=0}^3 (x^\mu)^2
+\]
+
+This is obviously a Hausdorff, second-countable, and locally Euclidean topological space.
+
+Given an open set $U \subset \mathcal{M}$ and a homeomorphism $\varphi: U \to \mathbb{R}^4$, $\varphi(p) = p$, we obtain a trivial chart $(U, \varphi)$ which globally covers $\mathcal{M}$.
+
+This map is trivially continuous and smooth.
+
+An \textit{atlas} is a collection of charts $\{(U_\alpha, \varphi_\alpha)\}$ such that $\cup_\alpha U_\alpha = \mathcal{M}$.
+
+$\mathcal{M}$ is a smooth manifold if the transition functions $\varphi_\beta \circ \varphi_\alpha^{-1}: \varphi_\alpha(U_\alpha \cap U_\beta) \to \varphi_\beta(U_\alpha \cap U_\beta)$ are $C^\infty$.
+
+Hence, $(\mathcal{M}, B_r(p), \varphi)$ is a smooth manifold.
