@@ -1,0 +1,132 @@
+
+\section{Principal Bundles}
+
+A principal bundle is a fiber bundle $P \xrightarrow{\pi} M$ is a bundle whose fiber is identical to the structure group. This framework is of particular importance, because it allows to understand fibre bundles with fibre $F$ on which $G$ acts. These bundles are called \emph{associated bundles} and are essential to understand Gauge theories in physics.
+
+\subsection{Action of a Lie Group on a Manifold}
+
+To understand this properly we first need to understand how a Lie group $G$ can act on a manifold $M$ \cite{FredericSchullerPrincipalfibrebundlesLec19FredericSchuller2015}
+Let \( (G, \cdot) \) be a Lie group, and \( M \) a smooth manifold.  
+Then a smooth map
+\[
+\triangleright : G \times M \longrightarrow M
+\]
+satisfying
+\begin{align*}
+  e \triangleright p &= p && \forall p \in M, \text{ and $e$ being the identity in $G$} \\
+  g_2 \triangleright (g_1 \triangleright p) &= (g_2 \cdot g_1) \triangleright p && \forall g_1, g_2 \in G, \, p \in M
+\end{align*}
+is called a \textbf{left \( G \)-action} on \( M \).
+
+Analogous a \textbf{right \( G \)-action} $\triangleleft : M \times G \longrightarrow M$ is defined, satisfying:
+\begin{align*}
+p \triangleleft e &= p && \forall p \in M, \text{ and $e$ being the identity in $G$} \\
+  (p \triangleleft g_1) \triangleleft g_2 &= p \triangleleft (g_1 g_2) && \forall g_1, g_2 \in G, \, p \in M
+\end{align*}
+
+Given a left action $\triangleright$, we can construct a right action: 
+\begin{align*}
+  \triangleleft : &M \times G \longrightarrow M, \\
+  & p \triangleleft g := g^{-1} \triangleright p.
+\end{align*}
+
+It is trivial to show that this yields a right action.
+
+Let \( G \) be a Lie group acting smoothly on a manifold \( M \) from the left via
+\[
+\triangleright : G \times M \longrightarrow M.
+\]
+
+We define an equivalence relation \( \sim \) on \( M \) by:
+
+\begin{align*}
+p \sim \tilde{p} \quad :\Longleftrightarrow \quad \exists g \in G \text{ such that } \tilde{p} = g \triangleright p.
+\end{align*}
+
+This defines an equivalence relation:
+\begin{itemize}
+  \item \textbf{Reflexivity:} \( e \triangleright p = p \), so \( p \sim p \).
+  \item \textbf{Symmetry:} If \( \tilde{p} = g \triangleright p \), then \( p = g^{-1} \triangleright \tilde{p} \), so \( \tilde{p} \sim p \).
+  \item \textbf{Transitivity:} If \( \tilde{p} = g_1 \triangleright p \) and \( \hat{p} = g_2 \triangleright \tilde{p} \), then
+  \[
+  \hat{p} = g_2 \triangleright (g_1 \triangleright p) = (g_2 g_1) \triangleright p,
+  \]
+  so \( p \sim \hat{p} \).
+\end{itemize}
+
+The \textbf{orbit} of a point \( p \in M \) under the group action is then the equivalence class:
+\[
+\mathcal{O}_p := \{ \tilde{p} \in M \mid \exists g \in G : \tilde{p} = g \triangleright p \}.
+\]
+
+We can then define the \textbf{quotient space} \( M/\!\sim \), often denoted \( M/G \), by identifyinf points that are in the same orbit.
+
+We define the \textbf{stabilizer} of a point \( p \in M \) as the set of elements in \( G \) that leave \( p \) unchanged:
+\[ S_p \coloneqq \{g \in G \mid g \triangleright p = p \} \]
+
+An action $\triangleright$ is called free if for all \( p \in M \) the stabilizer is trivial \( S_p = \{e\} \).
+
+
+
+
+
+\subsection{Principal Bundles}
+
+We now define a principal fibre bundle as follows \cite{FredericSchullerPrincipalfibrebundlesLec19FredericSchuller2015} 
+
+Let \( (P, \pi, M, F) \) be a fibre bundle. If the following conditions are satisfied, we call it a \textbf{principal \( G \)-bundle}:
+
+\begin{align*}
+  \text{(i)}\quad & P \text{ is equipped with a right } G\text{-action } \triangleleft, \\
+  \text{(ii)}\quad & \text{The action of } G \text{ is free}, \\
+  \text{(iii)}\quad & \pi : P \to M \text{ is isomorphic as a bundle to the quotient } \rho : P \to P/G,
+\end{align*}
+
+where \( \rho(p) \mapsto [p] \) denotes the canonical projection onto the orbit space \( P/G \). 
+
+To clarify, two bundles \( \pi: E \to M \) and \( \pi': E' \to M' \) are isomorphic if there exist diffeomorphisms \( \bar{f}: E \to E' \) and \( f: M \to M' \) such that \( \pi' \circ \bar{f} = f \circ \pi \).
+
+Since \( \triangleleft \) acts freely, each fibre \( \rho^{-1}([p]) \) is diffeomorphic to \(G\).
+
+
+\subsubsection{Associated Bundles}
+\paragraph{The Frame Bundle}
+
+Before we mentioned the structure group \( G \) of a tangent bundle \( TM \) as the group of linear automorphisms of the fibers. In this paragraph it will be rigorously defined, what this means. We will therefore define, what associated bundles are and as an example consider the frame bundle.
+
+We define a \textbf{frame} at a point \(p\in M\) with \(\text{dim} M = d\) as an ordered basis of the tangent space \(T_pM\) and the set  of all frames at \(p\) as:
+\[
+L_pM \coloneqq \left\{ (e_1, \dots, e_d) \,\middle|\, \{e_1, \dots, e_d\} \text{ is a basis of } T_pM \right\}
+\]
+
+There exists a natural isomorphism
+\[
+L_pM \cong \mathrm{GL}(d, \mathbb{R}),
+\]
+by identifying each frame \( (e_1, \dots, e_d) \in L_pM \) with the matrix whose columns are the components of the vectors \( e_i \). Concretely, each frame is mapped to a matrix \( g \in \mathrm{GL}(d, \mathbb{R}) \) such that
+\[
+g^\mu_{\;\;\alpha} = e^\mu_{\;\;\alpha}
+\]
+
+
+
+Analogous to the tangent bundle, we can define the \textbf{frame bundle}:
+\[ LM := \bigsqcup_{p \in M} L_pM \]
+
+Given a chart \(U_i\) on \( M \), we can define a local trivialization of the frame bundle \cite{NakaharaGeometrytopologyphysics2005}. A frame $\epsilon = \{e_1, \cdot, e_d\}$ at $p\in M$ is expressed in terms of the natural basis of the tangent space \(T_pM\) \( \left\{ \partial / \partial x^\mu \mid_p \right\} \)
+\[ e_\alpha = e^\mu_{\,\,\alpha} \, \partial/\partial x^\mu \mid_p \quad \text{where }e^\mu_{\,\,\alpha} \in \mathrm{GL}(d, \mathbb{R}) \]
+The local trivialization is then given by \( \varphi_i^{-1}(u)=(p,(e^\mu_{\,\,\alpha}))\).
+
+The projection $\pi_L$ of a frame $\epsilon = \{e_1, \cdot, e_d\}$ at a point \(p\in M\) is given by:
+\begin{align*}
+  \pi_L \, : \, LM &\longrightarrow M, \\
+        \epsilon &\mapsto \pi_L(\epsilon)=p
+\end{align*}
+
+The right action of \( \mathrm{GL}(d,\mathbb{R}) \) on the frame is defined as we would expect, since it is analogguss to the change of basis in a vector space:
+\begin{align*}
+  \triangleleft : LM \times \mathrm{GL}(d,\mathbb{R}) &\longrightarrow LM, \\
+  (\epsilon, g) &\mapsto \epsilon \triangleleft g = (e_1, \cdots, e_d) \triangleleft g = (e_i g^i_{\,\,1}, \cdots, e_i g^i_{\,\,d}),
+\end{align*}
+
+It is obvious that this action is free and transitive.
