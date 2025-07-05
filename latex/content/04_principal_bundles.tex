@@ -89,10 +89,9 @@ To clarify, two bundles \( \pi: E \to M \) and \( \pi': E' \to M' \) are isomorp
 Since \( \triangleleft \) acts freely, each fibre \( \rho^{-1}([p]) \) is diffeomorphic to \(G\).
 
 
-\subsubsection{Associated Bundles}
 \paragraph{The Frame Bundle}
 
-Before we mentioned the structure group \( G \) of a tangent bundle \( TM \) as the group of linear automorphisms of the fibers. In this paragraph it will be rigorously defined, what this means. We will therefore define, what associated bundles are and as an example consider the frame bundle.
+As an example we consider the frame bundle of a smooth manifold \( M \).
 
 We define a \textbf{frame} at a point \(p\in M\) with \(\text{dim} M = d\) as an ordered basis of the tangent space \(T_pM\) and the set  of all frames at \(p\) as:
 \[
@@ -113,7 +112,7 @@ g^\mu_{\;\;\alpha} = e^\mu_{\;\;\alpha}
 Analogous to the tangent bundle, we can define the \textbf{frame bundle}:
 \[ LM := \bigsqcup_{p \in M} L_pM \]
 
-Given a chart \(U_i\) on \( M \), we can define a local trivialization of the frame bundle \cite{NakaharaGeometrytopologyphysics2005}. A frame $\epsilon = \{e_1, \cdot, e_d\}$ at $p\in M$ is expressed in terms of the natural basis of the tangent space \(T_pM\) \( \left\{ \partial / \partial x^\mu \mid_p \right\} \)
+Given a chart \(U_i\) on \( M \), we can define a local trivialization of the frame bundle \cite{NakaharaGeometrytopologyphysics2005}. A frame $\epsilon = \{e_1, \dots, e_d\}$ at $p\in M$ is expressed in terms of the natural basis of the tangent space \(T_pM\) \( \left\{ \partial / \partial x^\mu \mid_p \right\} \)
 \[ e_\alpha = e^\mu_{\,\,\alpha} \, \partial/\partial x^\mu \mid_p \quad \text{where }e^\mu_{\,\,\alpha} \in \mathrm{GL}(d, \mathbb{R}) \]
 The local trivialization is then given by \( \varphi_i^{-1}(u)=(p,(e^\mu_{\,\,\alpha}))\).
 
@@ -123,12 +122,22 @@ The projection $\pi_L$ of a frame $\epsilon = \{e_1, \cdot, e_d\}$ at a point \(
         \epsilon &\mapsto \pi_L(\epsilon)=p
 \end{align*}
 
+Therefore we have introduced the necessary structure, suck that $(LM, \pi, M, \text{GL}(d,\mathrm{R})$ defines a fiber bundle. 
+
 The right action of \( \mathrm{GL}(d,\mathbb{R}) \) on the frame is defined as we would expect, since it is analogguss to the change of basis in a vector space:
 \begin{align*}
   \triangleleft : LM \times \mathrm{GL}(d,\mathbb{R}) &\longrightarrow LM, \\
   (\epsilon, g) &\mapsto \epsilon \triangleleft g = (e_1, \cdots, e_d) \triangleleft g = (e_i g^i_{\,\,1}, \cdots, e_i g^i_{\,\,d}),
 \end{align*}
 
-It is obvious that this action is free and transitive.
+To show that this Bundle equipped with this right action is a principal bundle, we need to check, if the action is free and the bundle is isomorphic to the quotient bundle.
+
+Therefore we need to show that \( e_i g^i_{\,\,\alpha} = e_\alpha \implies g^i_{\,\,\alpha} = \delta^i_{\,\,\alpha} \, \forall \alpha \) . Since \( \{e_1, \dots, e_d\} \) is a basis, they are linearly independent. Therefore the definition already implies that \( g^i_{\,\,\alpha} = \delta^i_{\,\,\alpha} \) and thus the action is free.
+
+To show the second condition, we need to show that the orbit space \( LM/\mathrm{GL}(d,\mathbb{R}) \) is consists of a single point for each \( \epsilon \in \pi^{-1}(p) \). This is indeed the case, since the orbit of a frame at \( p \in M \) under the action of \( \mathrm{GL}(d,\mathbb{R}) \) consists of all frames at \( p \), since the action is transitiv. Thus the quotient space is diffeomorphic to \( M \), with the diffeomorphism being: \( f: M \longrightarrow LM/\mathrm{GL}(d, \mathbb{R}), \, p \mapsto [\epsilon] \) where \( \epsilon \) is a frame at \( p \).
+
+Therefore we have shown that the frame bundle \( (LM, \pi_L, M, \mathrm{GL}(d,\mathbb{R})) \) is a principal \( \mathrm{GL}(d,\mathbb{R}) \)-bundle.
+
+
 
 
