@@ -11,6 +11,48 @@ Consider a $U(1)$ principal bundle $P$ over the four dimensional Minkowski spact
 And the field strength is given by the curvature two-form:
 \[ \mathscr{F} = d \mathcal{A} \]
 
-We identify the \textbf{gauge potential} $A$ by $\mathcal{A}_\mu=iA_\mu$
+We identify the \textbf{gauge potential} $A$ by $\mathcal{A}_\mu=iA_\mu$ and the \text{field strength tensor} $F$ by $\mathscr{F}_{\mu\nu} = iF_{\mu\nu}$, where $i$ is the factor associated with the Lie algebra. Therefore, the curvature two-form can be written in components as:
+\[ F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu \]
+
+The Bianchi identity is given by:
+
+\begin{align*}
+  D\mathscr{F} &= d\mathscr{F} \\
+  &= \frac12\partial_\mu \mathscr{F}_{\nu\rho} \, dx^\mu \wedge dx^\nu \wedge dx^\rho = 0 \\
+  \Rightarrow & \quad \partial_\mu \, \mathscr{F}_{\nu\rho} + \partial_\nu \, \mathscr{F}_{\rho\mu} + \partial_\rho \mathscr{F}_{\mu\nu} = 0
+\end{align*}
+
+
+When identifying the electric and magnetic fields with the components of the field strength tensor, we have:
+\begin{align*}
+  E_i &= F_{0i}\\
+  B_i &= \frac12 \epsilon_{ijk} F_{jk} 
+\end{align*}
+
+The Bianchi identity yields the \textbf{homogeneous Maxwell equations}:
+\begin{align*}
+  \partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mu\nu} &= 0
+\end{align*}
+
+First, choosing indices \(\mu=0\), \(\nu=i\), \(\rho=j\) and using antisymmetry \(F_{\mu\nu} = -F_{\nu\mu}\), we obtain:
+\begin{align*}
+  \partial_0 F_{ij} + \partial_i F_{j0} + \partial_j F_{0i} &= 0 \\
+  \Rightarrow \quad (\nabla \times \mathbf{E})_k + \partial_t B_k &= 0
+\end{align*}
+
+Now, choose \(\mu=i\), \(\nu=j\), \(\rho=k\), all spatial indices. Contracting with the Levi-Civita tensor \(\epsilon^{ijk}\) gives:
+\begin{align*}
+  \epsilon^{ijk} \partial_i F_{jk} &= 0 \\
+  \Rightarrow \quad \nabla \cdot \mathbf{B} &= 0
+\end{align*}
+
+Together, these two identities form the homogeneous Maxwell equations:
+\begin{align*}
+  \nabla \times \mathbf{E} + \partial_t \mathbf{B} &= 0 \\
+  \nabla \cdot \mathbf{B} &= 0
+\end{align*}
+
+
 
 \subsection{Yang-Mills theory}
+
