@@ -1,0 +1,151 @@
+
+\section{Curvature and Field Strength}
+
+\subsection{horizontal lift and parallel transport}
+
+Consider a principal $G$ bundle wiht total space $P$, base manifold $M$ and structure group $G$. Let $\gamma: [0,1] \to M$ be a curve in $M$. A curve $\gamma^\uparrow : [0,1] \to P$ is called a \textbf{horizontal lift} of $\gamma$ if it satisfies the following conditions:
+\begin{align*}
+  (i) \quad & \pi \circ \gamma^\uparrow = \gamma \\
+  (ii) \quad & X^V(\gamma^\uparrow(t)) = 0 \quad \forall t \in [0,1] \\
+  (iii) \quad & \pi_*(X_{\gamma^\uparrow(t)}) = X_{\gamma(t)} \quad \forall t \in [0,1]
+\end{align*}
+where $X^V \in V_{\gamma^\uparrow(t)}P$ is the vertical vector field.
+
+
+\subsection{Curvature}
+
+Let $P$ be a principal $G$-bundle with a connection one form $\omega$ and let $\phi \in \Omega^k(P) \otimes V$ be a $V$ valued k-form on $P$, where $V$ is some k-dimensional vector space with basis $\{e_i\}$. The connection one form $\omega$ allows for the separation of the tangent space of $P$ into horizontal and vertical components. Then the map:
+\begin{align*}
+  D\phi : \Gamma(T^{k+1}_uP) & \to V , \\
+  (X_1,\dots X_{k+1})& \mapsto D\phi(X_1, \dots X_k) \coloneq d\phi(X^H_1,\dots X^H_{k+1})
+\end{align*}
+
+is called the \textbf{covariant derivative} of $\phi$. Here $d\phi \equiv d \phi^i \otimes e_i$ is the exterior derivative.
+
+This introduces the \textbf{curvature two-form} $\Omega$ as the covariant derivative of the connection one-form $\omega$:
+\[ \Omega \equiv D\omega \in \Omega^2(P) \otimes \mathfrak{g} \]
+
+First it will be shown, that $\Omega$ takes the following form:
+\[ \Omega = d\omega + \omega \wedge_{\mathfrak{g}} \omega \]
+
+Where $\wedge_{\mathfrak{g}}$ denotes the wedge product in the Lie algebra $\mathfrak{g}$ of $G$ defined by its action on $\Gamma(T^2P)$: $(\omega \wedge_\mathfrak{g}\omega)(X,Y) \coloneq [ \omega(X), \omega(Y) ]_\mathfrak{g}$
+
+Note that if $G$ is a matrix group, then the above can be written in terms of its components as:
+\[ \Omega^i_{\,\,j} = d\omega^i_{\,\,j} + \omega^i_{\,\,k} \wedge \omega^k_{\,\,j} \] 
+
+We proof this by considering three separate cases\cite{FredericSchullerCurvaturetorsionprincipalbundlesLec24FredericSchuller2015}:
+\begin{align*}
+  \text{a)} \quad & X, Y \in \Gamma(TP) \text{ are vertical vector fields} \\
+  \Rightarrow\quad & \exists A, B \in T_eG : X = X^A, \quad Y = X^B \\
+  \\
+  & \text{Left-hand side:} \\
+  & \Omega(X^A, X^B) = D\omega(X^A, X^B) = d\omega\left( (X^A)^H, (X^B)^H \right) \\
+  &= d\omega(0, 0) = 0 \\
+  \\
+  & \text{Right-hand side:} \\
+  & d\omega(X^A, X^B) + (\omega \wedge_{\mathfrak{g}} \omega)(X^A, X^B) \\
+  &= X^A \big( \omega(X^B) \big) - X^B \big( \omega(X^A) \big) - \omega\big( [X^A, X^B] \big) + \big[ \omega(X^A), \omega(X^B) \big]_{\mathfrak{g}} \\
+  &= X^A (B) - X^B (A) - \omega\big( X^{[A,B]_\mathfrak{g}} \big) + [A,B]_{\mathfrak{g}} \\
+  &= 0 - 0 - [A,B]_{\mathfrak{g}} + [A,B]_{\mathfrak{g}} \\
+  &= 0 \\
+  \\ 
+  \text{b)} \quad & X, Y \in \Gamma(TP) \text{ are horizontal vector fields} \\
+    & \text{Left-hand side:} \\
+  & \Omega(X,Y) = D\omega(X,Y) = d\omega(X^H, Y^H) \\
+  &= d\omega(X, Y) \\
+  \\
+  &\text{Right-hand side:} \\
+  & d\omega(X,Y) + (\omega \wedge_{\mathfrak{g}} \omega)(X,Y) \\
+  &= d\omega(X^H, Y^H) + \big[ \omega(X), \omega(Y) \big]_\mathfrak{g} \\
+  &= d\omega(X,Y) + \big[ 0, 0 \big]_\mathfrak{g} \\
+  &= d\omega(X,Y) \\
+  \\
+  \text{c)} \quad & X \in \Gamma(TP) \text{ is horizontal and } Y=X^A \in \Gamma(TP) \text{ is vertical} \\
+      & \text{Left-hand side:} \\
+  &\Omega(X,X^A) = D\omega(X,X^A) = d\omega(X^H, (X^A)^H) \\
+  &= d\omega(X, 0) \\
+  &= 0 \\
+    &\text{Right-hand side:} \\
+    \\
+  &d\omega(X,X^A) + (\omega \wedge_{\mathfrak{g}} \omega)(X,X^A) \\
+  &= d\omega(X, X^A) + \big[ \omega(X), \omega(X^A) \big]_\mathfrak{g} \\
+  &= X(\omega(X^A)) - X^A(\omega(X)) - \omega\big( [X,X^A] \big) + \big[ \omega(X), \omega(X^A) \big]_\mathfrak{g} \\
+  &= X(A) - X^A(0) - \omega\big( [X,X^A] \big) + \big[ 0, A \big]_\mathfrak{g} \\
+  &= 0
+\end{align*}
+Where in the last step the fact that the comutator of a horizontal and a vertical vector field is again a horizontal vector field was used\cite{NakaharaGeometrytopologyphysics2005}.
+
+
+\subsection{Local from of the curvature and Yang-Mills field strength}
+
+As the connection one-form $\omega$ can be expressed locally as the pullback by a section $\mathcal{A}_i = \sigma^*\omega$, the local from of the curvature two-form $\Omega$ is defined analogous\cite{NakaharaGeometrytopologyphysics2005}:
+\[ \mathscr{F} \equiv \sigma^*\Omega \in \Omega^2(M)\otimes\mathfrak{g} \]
+In terms of the local connection one-form $\mathcal{A}$, the curvature two-form can be expressed as:
+
+\begin{align*}
+  \mathscr{F} &= \sigma^*(d\omega + \omega \wedge_\mathfrak{g} \omega) \\
+  &= \sigma^*(d\omega) + \sigma^*(\omega \wedge_\mathfrak{g} \omega) \\
+  &= \sigma^*(d\omega) + \sigma^*(\omega) \wedge_\mathfrak{g} \sigma^*(\omega) \\
+  &= d\mathcal{A}_i + \mathcal{A}_i \wedge_\mathfrak{g} \mathcal{A}_j
+\end{align*}
+
+Let $x^\mu$ be the coordinates on the open set $U_i$ where the section $\sigma$ is defined. Then the Yang-Mills field is given by $\mathcal{A}=\mathcal{A}_\mu dx^\mu$. We therefore get the following expression:
+\begin{align*}
+  \mathscr{F} &= d(\mathcal{A}_\mu dx^\mu) + (\mathcal{A}_\mu dx^\mu \wedge_\mathfrak{g} \mathcal{A}_\nu dx^\nu) \\
+  &= \frac12 \left( \partial_\mu \mathcal{A}_\nu - \partial_\nu \mathcal{A}_\mu + [\mathcal{A}_\mu, \mathcal{A}_\nu]_\mathfrak{g} \right) dx^\mu \wedge dx^\nu \\
+  &\coloneq \frac12 \, \mathscr{F}_{\mu\nu} \, dx^\mu \wedge dx^\nu
+\end{align*}
+
+In physics, the local curvature two-form $\mathscr{F}$ is identified with the \textbf{Yang-Mills field strength}.
+
+The co
+
+First, compute the exterior derivative:
+\begin{align*}
+  &\quad d\left( \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \mathbf{\Omega} + \mathbf{\Omega}^{-1} d\mathbf{\Omega} \right) \\
+  &= - \mathbf{\Omega}^{-1} d\mathbf{\Omega} \wedge_{\mathfrak{g}} \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \mathbf{\Omega} 
+  + \mathbf{\Omega}^{-1} d\mathbf{\mathcal{A}}_i \, \mathbf{\Omega} \\
+  &\quad - \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \wedge_{\mathfrak{g}} d\mathbf{\Omega} 
+  - \mathbf{\Omega}^{-1} d\mathbf{\Omega} \cdot \mathbf{\Omega}^{-1} \wedge_{\mathfrak{g}} d\mathbf{\Omega}
+\end{align*}
+
+Then, compute the wedge product:
+\begin{align*}
+  &\quad \left( \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \mathbf{\Omega} + \mathbf{\Omega}^{-1} d\mathbf{\Omega} \right) 
+  \wedge_{\mathfrak{g}}
+  \left( \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \mathbf{\Omega} + \mathbf{\Omega}^{-1} d\mathbf{\Omega} \right) \\
+  &= \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \wedge_{\mathfrak{g}} \mathbf{\mathcal{A}}_i \, \mathbf{\Omega} 
+  + \mathbf{\Omega}^{-1} \mathbf{\mathcal{A}}_i \wedge_{\mathfrak{g}} d\mathbf{\Omega} \\
+  &\quad + \mathbf{\Omega}^{-1} d\mathbf{\Omega} \wedge_{\mathfrak{g}} \mathbf{\mathcal{A}}_i \, \mathbf{\Omega} 
+  + \mathbf{\Omega}^{-1} d\mathbf{\Omega} \wedge_{\mathfrak{g}} d\mathbf{\Omega}
+\end{align*}
+
+Combining both contributions, we obtain:
+\begin{align*}
+  \mathscr{F}_j 
+  &= \mathbf{\Omega}^{-1} \left( d\mathbf{\mathcal{A}}_i + \mathbf{\mathcal{A}}_i \wedge_{\mathfrak{g}} \mathbf{\mathcal{A}}_i \right) \mathbf{\Omega} \\
+  &= \mathbf{\Omega}^{-1} \, \mathscr{F}_i \, \mathbf{\Omega}
+\end{align*}
+
+
+\subsection{The Bianchi identity}
+
+The Bianchi identity states that the covariant derivative of the curvature two-form vanishes. To show this, the exterior derivative of the curvature two-form is computed:
+\[ d\Omega = d(d\omega) + d(\omega \wedge_\mathfrak{g} \omega) = d\omega \wedge_\mathfrak{g} \omega - \omega \wedge_\mathfrak{g} d\omega  \]
+
+Since for any $X \in H_pP$ the connection one-form vanishes, the following holds:
+\[ D\Omega(X,Y,Z) = d\omega(X^H,Y^H,Z^H) = 0 \]
+Therefore, the \textbf{Bianchi identity} is \( D\Omega=0 \)
+
+Localy the Bianchi identity is given by:
+
+\begin{align*}
+  \sigma^*d\Omega &= d(\sigma^*\Omega) = d\,\mathscr{F} \\
+  &= \sigma^*(d\omega + \omega \wedge_\mathfrak{g} \omega) \\
+    &= d\sigma^*\omega \wedge_\mathfrak{g} \sigma^*\omega + \sigma^*\omega \wedge_\mathfrak{g} \sigma^*\omega \\
+    &= d\mathcal{A} \wedge_\mathfrak{g} \mathcal{A} - \mathcal{A}\wedge_\mathfrak{g}d\mathcal{A} \\
+    &= \mathscr{F}\wedge_\mathfrak{g} \mathcal{A} - \mathcal{A} \wedge_\mathfrak{g} \mathscr{F}
+\end{align*}
+
+Thus the Bianchi identity in local coordinates is given by:
+\[ D\mathscr{F} = d\,\mathscr{F} - (\mathscr{F}\wedge_\mathfrak{g} \mathcal{A} - \mathcal{A} \wedge_\mathfrak{g} \mathscr{F}) = d\mathscr{F} + [\mathcal{A},\mathscr{F}]_\mathfrak{g} = 0 \]

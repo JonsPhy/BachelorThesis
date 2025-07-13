@@ -197,6 +197,19 @@ Altogether the transition between two Yang-Mills fields on the intersection of t
 + \left( \Omega^{-1}(p) \right)^i_{\; k} \, \partial_\mu \Omega(p)^k_{\; r}
 \end{align*}
 
-This is simply the \textbf{gauge transformation} as known form gauge theories.
+This is simply the \textbf{gauge transformation} as known form gauge theories\cite{NakaharaGeometrytopologyphysics2005}.
 
+As an example, consider the case of a $U(1)$ principal bundle. The transition function \( \Omega \) is a smooth function \( U_i \cap U_j \longrightarrow U(1) \), which can be expressed as \( \Omega(m) = \exp[i\Lambda(m)] \) for some real-valued function \( \Lambda: U_i \cap U_j \longrightarrow \mathbb{R} \). Since $U(1)$ is a subgroup of $GL(d,\mathbb{C})$, two local connection forms \( \mathcal{A}_i \) and \( \mathcal{A}_j \) on the intersection \( U_i \cap U_j \) are then related by:
+
+\begin{align*}
+  \mathcal{A}_j 
+  &= \Omega^{-1} \, \mathcal{A}_i \, \Omega + \Omega^{-1} \, d\Omega \\
+  &= \mathcal{A}_i + e^{-i\Lambda(m)} \, d\left( e^{i\Lambda(m)} \right) \\
+  &= \mathcal{A}_i + e^{-i\Lambda(m)} \cdot i e^{i\Lambda(m)} \, d\Lambda \\
+  &= \mathcal{A}_i + i \, d\Lambda
+\end{align*}
+
+Which in components reads:
+\[ \mathcal{A}_{j \, \mu} = \mathcal{A}_{i \, \mu} + i\partial_\mu \Lambda \]
+This is the familiar form of the gauge transformation in electromagnetism\cite{NakaharaGeometrytopologyphysics2005}.
 
