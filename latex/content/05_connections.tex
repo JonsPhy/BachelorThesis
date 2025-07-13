@@ -159,10 +159,44 @@ Then the local connection forms are related as follows:
 
 \[ \mathcal{A}_j = \text{Ad}_{\Omega^{-1}(m)*} \mathcal{A}_i + \Omega^*\Xi_m \]
 
-In this will be shown for the case of the frame bundle $LM$. First, we calculate the latter expression. Notice that $\Omega^*\Xi_m$ is a map from the tangent space of the intersection on the base manifold \( U_i \cap U_j \) to the Lie algebra \( \mathfrak{gl}(d, \mathbb{R}) \). Therefore to find the explicit form it is calculated how this map acts on a vector in the tangent space:
+In this will be shown for the case of the frame bundle \( LM \). First, we calculate the latter expression. Notice that \( \Omega^* \Xi_m \) is a map from the tangent space of the intersection on the base manifold \( U_i \cap U_j \) to the Lie algebra \( \mathfrak{gl}(d, \mathbb{F}) \) for $\mathbb{F} = \mathbb{R,C}$. Therefore, to find the explicit form, it is calculated how this map acts on a vector in the tangent space:
+\begin{align*}
+  (\Omega^* \Xi)_p \left( \frac{\partial}{\partial x^\mu} \right)_p 
+  &= \Xi_{\Omega(p)}\left( \left( \Omega_* \left( \frac{\partial}{\partial x^\mu} \right)_p \right)_{\Omega(p)} \right) \\
+  &= (\Omega^{-1}(p))^i_{\,k}(dx^k_{\,j})_{\Omega(p)}\left( \left( \Omega_* \left( \frac{\partial}{\partial x^\mu} \right)_p \right)_{\Omega(p)} \right) \\
+  &= \Omega^{-1}(p)^i_{\,k} \left( \Omega_* \left( \frac{\partial}{\partial x^\mu} \right)_p \right)_{\Omega(p)} \left( x^k_{\,j} \right) \\
+  &= \Omega^{-1}(p)^i_{\,k} \left( \frac{\partial}{\partial x^\mu}  \right)_p \left( x^k_{\,j} \circ \Omega \right)_p \\
+  &= \Omega^{-1}(p)^i_{\,k} \left( \frac{\partial}{\partial x^\mu}  \right)_p \Omega(p)^k_{\,j}
+\end{align*}
+
+Therefore, the components of the pullback of the Maurer–Cartan form are given by\cite{FredericSchullerLocalrepresentationsconnectionbasemanifoldYangMillsfieldsLec222015}:
+\[
+\left( (\Omega^* \Xi)_p \right)^i_{\,j} 
+= \Omega^{-1}(p)^i_{\,k} \left( \frac{\partial}{\partial x^\mu} \right)_p \Omega(p)^k_{\,j} \, dx^\mu 
+\coloneqq \mathbf{\Omega}^{-1} d\mathbf{\Omega}
+\]
+
+
+
+Futhermore, the pushforward of the adjoint action on the Yang-Mills field is easily obtained by definition of the adjoint action:
+\begin{align*}
+  \text{Ad}_g &: G \longrightarrow G \, , \quad h \mapsto ghg^{-1} \\
+  \text{Ad}_{g*} &: T_eG \longrightarrow T_eG \, , \quad A \mapsto \mathbf{g A g}^{-1}
+\end{align*}
+
+Here the notation $\mathbf{g}$ is used to denote the matrix product, since the adjoint action is defined on the group $G$ not the Lie algebra $\mathfrak{g}$.
+
+Altogether the transition between two Yang-Mills fields on the intersection of two charts is given by:
 
 \begin{align*}
-  (\Omega^*\Xi)_p \left( \frac{\partial}{\partial x^\mu} \right)_p  
+\mathbf{\mathcal{A}}_j 
+&= \mathbf{\Omega}^{-1} \, \mathbf{\mathcal{A}}_i \, \mathbf{\Omega} 
+  + \mathbf{\Omega}^{-1} \,  d \mathbf{\Omega} \\
+(\mathcal{A}_j)^i_{\; r \mu} 
+&= \left( \Omega^{-1}(p) \right)^i_{\; k} \, (\mathcal{A}_i)^k_{\; l \mu} \, \Omega(p)^l_{\; r}
++ \left( \Omega^{-1}(p) \right)^i_{\; k} \, \partial_\mu \Omega(p)^k_{\; r}
 \end{align*}
+
+This is simply the \textbf{gauge transformation} as known form gauge theories.
 
 
