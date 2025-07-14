@@ -1,72 +1,132 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[a4paper,11pt,twoside,openright]{report}
+
+\usepackage[a4paper, bindingoffset=0.5cm, hmargin={2.5cm, 2.5cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+\setlength{\headheight}{14pt}
 
 % Stil-Datei laden
-\usepackage{style/thesis}
+\usepackage{style/bachelor}
 
-% Metadaten
-\title{From Differentiable Manifolds to Gauge Fields\\\large Von differenzierbaren Mannigfaltigkeiten zu Eichfeldern}
-\author{Jonas von Stein}
-\date{\today}
+% Metadata
+\newcommand{\thesistitle}{From Differentiable Manifolds to Gauge Fields\\\large Von differenzierbaren Mannigfaltigkeiten zu Eichfeldern}
+\newcommand{\authorname}{Jonas von Stein}
+\newcommand{\thesisdate}{\today}
 
 \begin{document}
 
-% Titelblatt ENGLISCH
+% English Title Page
 \selectlanguage{english}
+\pagenumbering{roman}
 \begin{titlepage}
-    \centering
-    {\LARGE Bachelor Thesis \par}
-    \vspace{2cm}
-    {\Huge \bfseries From Differentiable Manifolds to Gauge Fields \par}
-    \vspace{1.5cm}
-    {\Large Jonas von Stein \par}
-    \vfill
-    \textit{Supervisor: Prof. Dr. Ivo Sachs}\\
-    \textit{Arnold Sommerfeld Center for Theoretical Physics \\ Ludwig-Maximilians-Universität Munich}\\
-    \vspace{1cm}
-    {\large \today\par}
-\end{titlepage}
+  \begin{center}
+    \vspace*{0.65cm}
+    \huge
+    \hspace*{-0.73cm}
+    \textbf{\thesistitle}\\
+    \vspace*{2.2cm}
 
-% Titelblatt DEUTSCH
-\selectlanguage{ngerman}
-\begin{titlepage}
-    \centering
-    {\LARGE Bachelorarbeit \par}
-    \vspace{2cm}
-    {\Huge \bfseries Von differenzierbaren Mannigfaltigkeiten zu Eichfeldern \par}
-    \vspace{1.5cm}
-    {\Large Jonas von Stein \par}
-    \vfill
-    \textit{Betreuer: Prof. Dr. Ivo Sachs}\\
-    \textit{Arnold Sommerfeld Center for Theoretical Physics \\ Ludwig-Maximilians-Universität Munich}\\
-    \vspace{1cm}
-    {\large \today\par}
-\end{titlepage}
+    \includegraphics[width=0.35\textwidth]{figures/lmu_siege1.pdf}
 
-% Inhaltsverzeichnis
-\tableofcontents
+    \vspace*{0.5cm}
+    \Large
+    Bachelor Thesis of the Faculty of Physics\\
+    Ludwig Maximilian University of Munich
+
+    \vspace*{3.5cm}
+    \large
+    submitted by\\[0.1cm]
+    \Large \textbf{\authorname}\\
+    \large born in [Your City] % <-- change this
+
+    \vspace*{2.5cm}
+    Munich, \thesisdate
+  \end{center}
+% German Title Page
+
 \newpage
 
+\selectlanguage{ngerman}
+  \begin{center}
+    \vspace*{0.65cm}
+    \huge
+    \hspace*{-0.73cm}
+    \textbf{\thesistitle}\\
+    \vspace*{2.2cm}
+
+    \includegraphics[width=0.35\textwidth]{figures/lmu_siege1.pdf}
+
+    \vspace*{0.5cm}
+    \Large
+    Bachelorarbeit der Fakultät für Physik\\
+    Ludwig-Maximilians-Universität München
+
+    \vspace*{3.5cm}
+    \large
+    vorgelegt von\\[0.1cm]
+    \Large \textbf{\authorname}\\
+    \large geboren in [Deine Stadt] % <-- change this
+
+    \vspace*{2.5cm}
+    München, den \thesisdate
+  \end{center}
+\end{titlepage}
+
+
+% Inhaltsverzeichnis
+\cleardoublepage
+\pagenumbering{arabic}
+\selectlanguage{english}
+\tableofcontents
+\clearpage
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all headers and footers
+
+
+% Abschnittsüberschriften (odd pages = right)
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\rightmark}}
+
+% Kapitelüberschriften (even pages = left)
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{}{\thepage}}
+
+% Fußzeile leer
+\cfoot{}
+
+
 % Kapitel einbinden
-%
-
-%\input{content/higgs_notes_transcribed}
 \input{content/01_intro}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/02_manifolds}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/03_bundles}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/04_principal_bundles}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/05_connections}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/06_curvature_field_strength}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/07_gauge_theories}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \input{content/08_conclusion}
-
-
-
-
-
-
+\clearpage
 
 % Literaturverzeichnis
-\bibliographystyle{unsrt} % oder alpha, plain, abbrvnat, etc.
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alphadin}
 \bibliography{bibliography}
+
+
+
+
 
 \end{document}

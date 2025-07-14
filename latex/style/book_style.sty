@@ -1,0 +1,99 @@
+
+
+
+%\ifpdf %%Einbindung von Grafiken mittels \includegraphics{datei}
+	\usepackage[pdftex]{graphicx} %%Grafiken in pdfLaTeX
+%\else
+%	\usepackage[dvips]{graphicx} %%Grafiken und normales LaTeX
+%\fi
+%\usepackage[hang,tight,raggedright]{subfigure} %%Teilabbildungen in einer Abbildung
+%\usepackage{pst-all} %%PSTricks - nicht verwendbar mit pdfLaTeX
+
+\usepackage{amsmath}
+\usepackage{mathtools} % Ergänzungen zu amsmath
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+%\usepackage{txfonts}
+\usepackage{lscape} %fuer gedrehte tabellen
+\usepackage{tabularx} %fuer tabellen mit variabler spaltenbreite und fester gesamtbreite
+%\usepackage{a4wide}
+
+\usepackage[numbers,round]{natbib}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%% Zeilenabstand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\singlespacing        %% 1-zeilig (Standard)
+%\onehalfspacing       %% 1,5-zeilig
+%\doublespacing        %% 2-zeilig
+
+%absaetze
+\parindent0cm
+\parskip0.2cm
+
+%\usepackage[pdftex,bookmarks=true,colorlinks=true,
+%        linkcolor=black,
+%        citecolor=black,
+%        filecolor=black,
+%        pagecolor=black,
+%        urlcolor=black,
+%        bookmarks=true,
+%        bookmarksopen=true,
+%        bookmarksopenlevel=3,
+%        plainpages=false,
+%        pdfpagelabels=true]{hyperref}
+
+%meine anpasssungen
+
+\usepackage{siunitx} %für korrekte Einheiten
+\usepackage{graphicx} % Für Grafiken
+\usepackage{tikz}     % Für hochwertige Diagramme und Zeichnungen
+\usepackage{pgfplots} % Für professionelle Plots
+\pgfplotsset{compat=1.17}
+
+
+
+
+
+
+\usepackage{float} %für Platzierungen
+% Laplace- und D'Alembert-Operatoren
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\newcommand*\Quabla{\mathop{}\!\mathbin\Box}
+
+
+
+%%% MATH COMMANDS %%%
+% -- own commands for math symbols -- %
+\newcommand{\N}{\mathbb{N}}           %   for the set of natural numbers
+\newcommand{\Z}{\mathbb{Z}}           %   for the set of integers
+\newcommand{\Q}{\mathbb{Q}}           %   for the set of rational numbers
+\newcommand{\R}{\mathbb{R}}           %   for the set of real numbers
+\newcommand{\C}{\mathbb{C}}           %   for the set of complex numbers
+\newcommand{\D}{\mathrm{d}}           %   for mathroman d, i.e. differential d
+\newcommand{\E}{\mathrm{e}}           %   for mathroman e, i.e. Euler's constant
+\newcommand{\I}{\mathrm{i}}           %   for mathroman i, i.e. imaginary unit
+\newcommand{\1}{\mathbbm{1}}          %   for identity matrix
+\newcommand{\bs}{\boldsymbol}         %   for bold math symbols (instead of \textbf{} or \mathbf{}), i.e. for vectors in physcs
+\DeclareMathOperator{\diag}{diag}     %   for writing a diagonal matrix, i.e. sign convetion of Minkowski metric tensor \eta_{\mu \nu} = \diag(-,+,+,+)
+\newcommand{\latex}{\LaTeX\xspace}    %   for the LaTeX symbol
+% -- own command for theoremstyle, see amsthm -- %
+%\theoremstyle{plain}                             %
+%\newtheorem{definition}{Definition}                     %
+%%%%%%%%%%%%%%%%%%%%%
+
+%Gumbel adonns
+%\graphicspath{{figures/}}
+
+
+%for bibliography to display url date
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\usepackage{tikz}
+
+\def\UrlBreaks{\do\/\do-\do\_\do\.}

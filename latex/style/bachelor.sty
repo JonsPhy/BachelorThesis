@@ -1,0 +1,108 @@
+% --- Mathematical Packages ---
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% --- Graphics ---
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage{tabularx}
+
+% --- Layout ---
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\parindent0cm
+\parskip0.2cm
+
+% --- Language ---
+\usepackage[ngerman, english]{babel}
+
+% --- Fonts and Symbols ---
+\usepackage{textcomp}
+\usepackage{lmodern}
+
+% --- Intelligent References ---
+
+% --- Bibliography ---
+\usepackage[numbers,round]{natbib}
+\usepackage[hyphens]{url}
+\def\UrlBreaks{\do\/\do-\do\_\do\.}
+
+% --- Hyperref ---
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    hidelinks,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=blue
+}
+\usepackage{cleveref}
+
+
+% --- Code Listings ---
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{background}{rgb}{0.15, 0.15, 0.15}
+\definecolor{foreground}{rgb}{0.9, 0.9, 0.9}
+\definecolor{keywordcolor}{rgb}{0.98, 0.47, 0.24}
+\definecolor{stringcolor}{rgb}{0.68, 0.91, 0.65}
+\definecolor{commentcolor}{rgb}{0.5, 0.5, 0.5}
+\definecolor{identifiercolor}{rgb}{0.65, 0.85, 1.0}
+\definecolor{numbercolor}{rgb}{0.8, 0.8, 0.8}
+\definecolor{framecolor}{rgb}{0.25, 0.25, 0.25}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{background},
+    basicstyle=\ttfamily\small\color{foreground},
+    commentstyle=\color{commentcolor}\textit,
+    keywordstyle=\color{keywordcolor}\bfseries,
+    stringstyle=\color{stringcolor},
+    identifierstyle=\color{identifiercolor},
+    numberstyle=\tiny\color{numbercolor},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    xleftmargin=15pt,
+    frame=single,
+    rulecolor=\color{framecolor},
+    frameround=tttt,
+    aboveskip=10pt,
+    belowskip=10pt,
+    morekeywords={input,include,print,println,repeat,until,local,function,end}
+}
+\lstset{style=mystyle}
+
+% --- Custom Math Commands ---
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\bs}{\boldsymbol}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\latex}{\LaTeX\xspace}
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\newcommand*\Quabla{\mathop{}\!\mathbin\Box}
+
+% --- Table of Contents in German ---
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
