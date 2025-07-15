@@ -1,4 +1,5 @@
 *.aux
 *.log
-out/
+out/*
+!out/main.pdf
 .DS_Store
