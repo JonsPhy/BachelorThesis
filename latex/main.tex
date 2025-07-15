@@ -17,6 +17,7 @@
 % English Title Page
 \selectlanguage{english}
 \pagenumbering{roman}
+\pagestyle{empty}
 \begin{titlepage}
   \begin{center}
     \vspace*{0.65cm}
@@ -45,7 +46,7 @@
     Munich, \thesisdate
   \end{center}
 
-\newpage
+\cleardoublepage
 
 \selectlanguage{ngerman}
   \begin{center}
@@ -79,7 +80,6 @@
 
 % Inhaltsverzeichnis
 \cleardoublepage
-\pagenumbering{arabic}
 \selectlanguage{english}
 \tableofcontents
 \clearpage
@@ -100,6 +100,9 @@
 
 
 % Kapitel einbinden
+
+\pagenumbering{arabic}
+
 \input{content/01_intro}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
