@@ -1,10 +1,9 @@
 
 \chapter{Bundles}
 
+  The definition of a vector on a Manifold is non-trivial because a vector space structure might not exist globally on the manifold. We can still equip a Manifold with a Vector space structure locally. Thus, tangent spaces are introduced pointwise. Combining these local structures will lead naturally to the definition of fiber bundles.
 
 \section{Tangent Space $\mathcal{T}_p\mathcal{M}$}
-
-  The definition of a vector on a Manifold is non trivial, because a vector space structure might not exist globally on the manifold.
 
   Let $\mathcal{M}$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in \mathcal{M}$ is a linear map $v: C^\infty(\mathcal{M}) \to \mathbb{R}$ satisfying the Leibniz rule\footnote{$f \in C^\infty(\mathcal{M})$ if for all charts $(U, \varphi)$ on $\mathcal{M}$, the composition $f \circ \varphi^{-1}: \varphi(U) \subset \mathbb{R}^n \to \mathbb{R}$ is infinitely differentiable.}:
   \[ v[fg] = v[f]g(p) + f(p)v[g] \]
