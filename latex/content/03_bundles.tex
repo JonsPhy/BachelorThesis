@@ -3,48 +3,36 @@
 
   The definition of a vector on a Manifold is non-trivial because a vector space structure might not exist globally on the manifold. We can still equip a Manifold with a Vector space structure locally. Thus, tangent spaces are introduced pointwise. Combining these local structures will lead naturally to the definition of fiber bundles.
 
-\section{Tangent Space $\mathcal{T}_p\mathcal{M}$}
+\section{Tangent Space $T_pM$}
 
-  Let $\mathcal{M}$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in \mathcal{M}$ is a linear map $v: C^\infty(\mathcal{M}) \to \mathbb{R}$ satisfying the Leibniz rule\footnote{$f \in C^\infty(\mathcal{M})$ if for all charts $(U, \varphi)$ on $\mathcal{M}$, the composition $f \circ \varphi^{-1}: \varphi(U) \subset \mathbb{R}^n \to \mathbb{R}$ is infinitely differentiable.}:
-  \[ v[fg] = v[f]g(p) + f(p)v[g] \]
-  
-  Such a map is called a \textit{derivation} at $p$. The set of all such derivations forms a vector space, the \textit{tangent space} at $p$, denoted $\mathcal{T}_p\mathcal{M}$.
+  Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(\mathcal{M}) \to \mathbb{R}$ satisfying the Leibniz rule\cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
+ \[ v[fg] = v[f]g(p) + f(p)v[g] \]
 
-  We produce a tangent vector at a point $p \in \mathcal{M}$ as an equivalence class of curves through $p$.
+  A tangent vector at a point $p \in \mathcal{M}$ can be constricted as the directional derivatives of an equivalence class of curves through $p$\cite{NakaharaGeometrytopologyphysics2005}.
 
-  Let $\gamma_n: [-\epsilon, \epsilon] \to \mathcal{M}$ be a family of smooth curves in $\mathcal{M}$. Then $\varphi(\gamma_n(t)) = x_n^\mu(t) \in \mathbb{R}^n$ is called the coordinate representation of $\gamma_n$ in a chart $(U, \varphi)$.
+  Let $\gamma: [-\epsilon, \epsilon] \to M$ be a smooth curve in $M$ with $\gamma(0)=p$. Then $x^\mu(\gamma(t)) \in \mathbb{R}^n$ is called the coordinate representation of $\gamma$ induces by a chart $(U, \varphi)$.
 
-Let $f \in C^\infty(\mathbb{R}^n)$, then we can define
+Let $f \in C^\infty(M)$ be a smooth function on $M$. The directional derivative of $f$ along the curve $\gamma$ at $t=0$ is given by:
 \begin{align*}
 \left. \frac{d}{dt} (f \circ \gamma)(t) \right|_{t=0}
-&= \left. \frac{d}{dt} \left( f(x^\mu(t)) \right) \right|_{t=0} \\
+  &= \left. \frac{d}{dt} \left( f\circ \varphi^{-1}\circ\varphi\circ\gamma(t) \right) \right|_{t=0} \\
 &= \left. \frac{\partial f}{\partial x^r} \frac{d x^r}{dt} \right|_{t=0} \\
 &= \left. \frac{d x^r}{dt} \right|_{t=0} \left. \frac{\partial f}{\partial x^r} \right|_p
 \end{align*}
 
-We define an equivalence class.  
-We say two curves are equivalent  
-if
-\[
-\left. \frac{d}{dt} \left( f \circ \gamma_1 \right)(t) \right|_{t=0}
-= \left. \frac{d}{dt} \left( f \circ \gamma_2 \right)(t) \right|_{t=0}
-\]
-
-For two equivalent curves $\gamma_1$ and $\gamma_2$,
+The definition of a tangent vector is now obtained by introducing an equivalence relation on curves. Two curves $\gamma_1$ and $\gamma_2$ are called equivalent at $\gamma_1(0)=\gamma_2(0)=p$ if their derivatives at $t=0$ are equal:
 \[
 \left. \frac{d x_1^r}{dt} \right|_{t=0}
 = \left. \frac{d x_2^r}{dt} \right|_{t=0}
 = v^r
 \]
-
-A tangent vector is
+A tangent vector is identified with the differential operator given the equivalence class of curves. Once a chart $(U, \varphi)$ is chosen, with local coordinates $(x^1, \dots, x^n)$, a tangent vector is represented as a linear combination of partial derivatives with real coefficients.
 \[
 v = v^r \left. \frac{\partial}{\partial x^r} \right|_p
 \]
-We notice: Once a chart $(U, \varphi)$ is chosen, with local coordinates $(x^1, \dots, x^n)$, a tangent vector is represented as a linear combination of partial derivatives with real coefficients.
-
+The tangent space at a point $p \in M$ is then defined as the set of all tangent vectors at $p$ and is denoted by $T_pM$.
 \[
-\left\{ \left. \frac{\partial}{\partial x^1} \right|_p, \dots, \left. \frac{\partial}{\partial x^n} \right|_p \right\} \quad \text{form a basis of } T_p \mathcal{M}
+\left\{ \left. \frac{\partial}{\partial x^1} \right|_p, \dots, \left. \frac{\partial}{\partial x^n} \right|_p \right\} \quad \text{form a basis of } T_pM
 \]
 
 
