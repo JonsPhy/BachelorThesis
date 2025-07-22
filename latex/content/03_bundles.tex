@@ -8,7 +8,7 @@
   Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(\mathcal{M}) \to \mathbb{R}$ satisfying the Leibniz rule\cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
  \[ v[fg] = v[f]g(p) + f(p)v[g] \]
 
-  A tangent vector at a point $p \in \mathcal{M}$ can be constricted as the directional derivatives of an equivalence class of curves through $p$\cite{NakaharaGeometrytopologyphysics2005}.
+  A tangent vector at a point $p \in M$ can be constructed as the directional derivatives of an equivalence class of curves through $p$\cite{NakaharaGeometrytopologyphysics2005}.
 
   Let $\gamma: [-\epsilon, \epsilon] \to M$ be a smooth curve in $M$ with $\gamma(0)=p$. Then $x^\mu(\gamma(t)) \in \mathbb{R}^n$ is called the coordinate representation of $\gamma$ induces by a chart $(U, \varphi)$.
 
@@ -37,53 +37,52 @@ The tangent space at a point $p \in M$ is then defined as the set of all tangent
 
 
 
-\subsection*{The Tangent Bundle as a Fiber Bundle}
+\section{The Tangent Bundle as a Fiber Bundle}
 
-To continue, we need to introduce fiber bundles. To do so, we first take a look at a specific example: the tangent bundle.
-
-To construct the tangent bundle of a smooth $n$-dimensional manifold $\mathcal{M}$, we take the disjoint union of all tangent spaces $T_p\mathcal{M}$:
+To introduce the concept of fiber bundles, a detailed examination of a specific example, the tangent bundle, serves as an effective foundation.
+The tangent bundle of a smooth \( n \)-dimensional manifold \( \mathcal{M} \) is constructed by taking the disjoint union of all tangent spaces \( T_p\mathcal{M} \). This construction can be represented as:
 \[
-T\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M}
-= \bigcup_{p \in \mathcal{M}} \{p\} \times T_p\mathcal{M}
+T\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M} = \bigcup_{p \in \mathcal{M}} \{p\} \times T_p\mathcal{M}
 \]
+Here, \( T_p\mathcal{M} \) denotes the tangent space at a point \( p \in \mathcal{M} \). The tangent space \( T_p\mathcal{M} \) is a vector space that consists of all tangent vectors at the point \( p \). It should be noted that this notation emphasizes the pointwise nature of the tangent bundle, where each tangent space is associated with a specific point on the manifold. Since each tangent space is a different object, a certain tangent vector in a tangent space can only belong to that specific tangent space. Therefore all the information is already in the vector itself and the direct product notation \( \{p\} \times T_p\mathcal{M} \) is only used to clarify\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
 
-Each element of $T\mathcal{M}$ is a pair $(p, v)$, where $p \in \mathcal{M}$ is a point in the base space and $v \in T_p\mathcal{M}$ is a tangent vector at that point.
+Each element of the tangent bundle \( T\mathcal{M} \) can be expressed as a pair \( (p, v) \), where \( p \) is a point on the manifold \( \mathcal{M} \), and \( v \) is a tangent vector belonging to the tangent space \( T_p\mathcal{M} \) at that point. 
 
-We define the natural projection:
+A natural projection map is defined as follows:
 \[
 \pi: T\mathcal{M} \to \mathcal{M}, \quad (p, v) \mapsto p
 \]
-which "forgets" the tangent vector.
+This projection, \( \pi \), serves to "forget" the tangent vector \( v \) associated with each point, effectively collapsing all the tangent vectors at \( p \) to the single point \( p \) in the base manifold\cite{NakaharaGeometrytopologyphysics2005}.
 
-We call $\pi^{-1}(p) = T_p\mathcal{M}$ the fiber over $p$. Since $T_p\mathcal{M} \cong \mathbb{R}^n$ as a vector space, we refer to the model fiber as $F = \mathbb{R}^n$.
+The fiber over a point \( p \) is denoted as \( \pi^{-1}(p) = T_p\mathcal{M} \). This represents all the tangent vectors at the point \( p \). Since \( T_p\mathcal{M} \) is isomorphic to \( \mathbb{R}^n \) as a vector space, it is referred to as the model fiber, denoted \( F = \mathbb{R}^n \)\cite{NakaharaGeometrytopologyphysics2005}.
 
-The final step is to give $T\mathcal{M}$ a smooth structure of dimension $2n$, we proceed as follows:  
-Given a coordinate chart $(U, \varphi)$ on $\mathcal{M}$, we define a chart on $\pi^{-1}(U) \subset T\mathcal{M}$ by:
+Consider a coordinate chart \( (U, \varphi) \) on \( \mathcal{M} \). The chart \( \varphi \) provides a mapping from an open set \( U \subseteq \mathcal{M} \) to an open subset of \( \mathbb{R}^n \). A diffeomorphism on the preimage \( \pi^{-1}(U) \subset T\mathcal{M} \) can then be defined as:
 \[
 \Psi: \pi^{-1}(U) \to \mathbb{R}^{2n}, \quad (p, v) \mapsto \left(x^1(p), \dots, x^n(p), v^1, \dots, v^n \right)
 \]
-where $v = v^i \left. \frac{\partial}{\partial x^i} \right|_p$.
+where the coordinates \( x^i(p) \) represent the local coordinates of the point \( p \) in \( U \), and \( v = v^i \left. \frac{\partial}{\partial x^i} \right|_p \) describes the tangent vector in terms of its components in the chosen coordinate system\cite{NakaharaGeometrytopologyphysics2005}.
 
-This defines a local trivialization:
+This establishes a local trivialization of the tangent bundle, expressed as:
 \[
-T\mathcal{M}|_U \cong U \times \mathbb{R}^n
+TM|_U \cong U \times \mathbb{R}^n
 \]
 
-Thus, we have constructed a fiber bundle with:
+In summary, the construction of the tangent bundle yields a fiber bundle characterized by the following essential components:
 \begin{itemize}
-  \item \textbf{Total space:} $T\mathcal{M} = \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M}$
-  \item \textbf{Base space:} $\mathcal{M}$
-  \item \textbf{Projection:} $\pi: T\mathcal{M} \to \mathcal{M}$
-  \item \textbf{Model fiber:} $F = \mathbb{R}^n$
-  \item \textbf{Local trivialization:} $T\mathcal{M}|_U \cong U \times \mathbb{R}^n$
+  \item \textbf{Total space:} \( T\mathcal{M} = \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M} \), encapsulating all tangent spaces.
+  \item \textbf{Base space:} \( \mathcal{M} \), a manifold to which additional structure is added.
+  \item \textbf{Projection:} \( \pi: T\mathcal{M} \to \mathcal{M} \), mapping each tangent vector to its associated point on the manifold.
+  \item \textbf{Model fiber:} \( F = \mathbb{R}^n \), serving as the standard fiber structure over each point.
+  \item \textbf{Local trivialization:} \( T\mathcal{M}|_U \cong U \times \mathbb{R}^n \), ensuring that the tangent bundle locally resembles a product structure.
 \end{itemize}
 
-This provides an intuitive picture of fiber bundles:  
-Analogous to a manifold, which we often think of as a space that locally resembles $\mathbb{R}^n$, a fiber bundle can be thought of as a space that locally resembles a product of the base space with a typical fiber\footnote{Often the product of two manifolds, but not necessarily so}.
+ Similar to the way a manifold is commonly perceived as a space that locally resembles \( \mathbb{R}^n \), a fiber bundle may be conceptualized as a space that locally resembles the Cartesian product of the base space with a typical fiber structure. 
 
-\subsection*{General Definition of a Fiber Bundle}
+Since the fiber of the tangent bundle is a vector space, the tangent bundle is also referred to as a \textbf{vector bundle}.
 
-The formal definition of a fiber bundle reads as follows.
+\section{Definition of a Fiber Bundle}
+
+The formal definition of a fiber bundle reads as follows\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
 A fiber bundle is a quadruple $(E, B, \pi, F)$ where:
 \begin{itemize}
   \item $E$ is the total space
@@ -121,65 +120,79 @@ The fiber over a point $b \in B$ is:
 F_b := \pi^{-1}(\{b\}) \cong F
 \]
 
-We often denote a fiber bundle as $E \xrightarrow{\pi} B$
+Often the notations $E \xrightarrow{\pi} B$ or $\pi : E \to B$ are used to denote a fiber bundle.
 
-\subsection*{Sections}
 
-One important definition in the context of fiber bundles is that of a section or cross-section. This allows us to pick an element from each fiber over each point in a continuous manner, intoducing concepts like vector fields over space time.
-A \emph{section} of a fiber bundle is a continuous map $s: B \to E$ such that
+\subsection{The Structure Group of a Fiber Bundle}
+
+Above a fiber bundle was defined as a quadruple \((E, B, \pi, F)\) equipped with local trivializations. These local trivializations are established as diffeomorphisms on an open cover $\{U_\alpha\}$ of the base space \(B\). The definition does not impose the requirement that \(U_\alpha \cap U_\beta = \emptyset\). For a point \(p \in U_\alpha \cap U_\beta\), multiple local trivializations \(\varphi_\alpha(p, f) = \varphi_{\alpha,p}(f)\) and \(\varphi_\beta(p, f) = \varphi_{\beta,p}(f)\) may be present, defined on \(U_\alpha\) and \(U_\beta\), respectively.
+
+The \textbf{structure group} \(G\) of a fiber bundle is defined as the Lie group of diffeomorphisms relating these local trivializations. The corresponding transition function is given by\cite{NakaharaGeometrytopologyphysics2005}:
+
 \[
-\pi \circ s = \mathrm{id}_B
+t_{\alpha\beta}(p) \equiv \varphi_{\alpha,p}^{-1} \circ \varphi_{\beta,p} : F \to F
 \]
 
-This ensures we choose exactly one point in each fiber continuously. Global sections need not exist, but local sections $s: U \to E$ with $\pi \circ s = \mathrm{id}_U$ often do.
+This establishes a smooth map \(t_{\alpha\beta}: U_\alpha \cap U_\beta \to G\) that satisfies the following properties:
 
-If $(U_\alpha, \varphi_\alpha)$ is a local trivialization, then such local sections always exist.
+\begin{align*}
+  t_{\alpha \alpha}(p) &= \mathrm{id}_F && \forall\, p \in U_\alpha \\
+  t_{\alpha\beta}(p) &= t_{\beta\alpha}(p)^{-1} && \forall\, p \in U_\alpha \cap U_\beta \\
+  t_{\alpha\beta}(p) \circ t_{\beta\gamma}(p) &= t_{\alpha\gamma}(p) && \forall\, p \in U_\alpha \cap U_\beta \cap U_\gamma
+\end{align*}
 
-We denote the set of all (smooth) sections by:
+In the case of the tangent bundle, the structure group corresponds to the general linear group \(\mathrm{GL}(n, \mathbb{R})\), which consists of all invertible \(n \times n\) matrices. 
+A fiber bundle with transition maps identical to the identity map is termed a \textbf{trivial bundle}. In this scenario, the total space \(E\) is diffeomorphic to the product space \(B \times F\). 
+
+Generally, a fiber bundle does not possess a unique trivialization. Let \(\{\varphi_\alpha\}\) and \(\{\tilde{\varphi}_\alpha\}\) denote two local trivializations over the same open covering that describe the same fiber bundle. These trivializations are related by maps \(g_\alpha(p) : F \to F \quad \forall\, p \in B\), where each \(g_\alpha(p)\) is a homeomorphism within the structure group \(G\). It will be defined in section \ref{sec:action-of-lie-group-on-manifold} what it means for a Lie group to act on a manifold. The transition function between the two local trivializations is then given by:
+
 \[
-\Gamma(E) := \left\{ s: \mathcal{M} \to E \mid \pi \circ s = \mathrm{id}_{\mathcal{M}} \right\}
-\]
-\section{Minkowski Space \texorpdfstring{$\mathbb{M}^4$}{M⁴}}
-
-The physics of this thesis takes place in Minkowski space. We therefore formally define Minkowski space $\mathbb{M}^4$.
-
-We already defined the spacetime manifold $\mathcal{M} := \mathbb{R}^4$ in section \ref{sec:spacetime-manifold}. We now define the tangent bundle
-\[
-T\mathbb{M}^4 := \bigsqcup_{p \in \mathbb{M}^4} T_p \mathbb{M}^4
-\]
-together with the natural projection:
-\[
-\pi: T\mathbb{M}^4 \to \mathbb{M}^4, \quad (p, v) \mapsto p
+g_\alpha(p) \equiv \varphi_{\alpha,p}^{-1} \circ \tilde{\varphi}_{\alpha,p}
 \]
 
-This is a trivial smooth vector bundle of rank 4 over $\mathbb{M}^4$, i.e.:
+Considering the tangent bundle as an illustrative example\cite{NakaharaGeometrytopologyphysics2005}, let \(U_i\) and \(U_j\) represent overlapping charts with \(p \in U_i \cap U_j\). Utilizing the basis \(\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}\) and \(\left\{ \left. \frac{\partial}{\partial y^j} \right|_p \right\}\), a vector \(v \in T_p\mathcal{M}\) can be expressed in both bases as:
+
 \[
-T\mathbb{M}^4 \cong \mathbb{M}^4 \times \mathbb{R}^4
+v = v^{\mu} \frac{\partial}{\partial x^{\mu}} = \tilde{v}^{\mu} \frac{\partial}{\partial y^{\mu}}
 \]
 
-Each fiber is:
+The transition function \(t^\nu_{\,\,\mu}\) is thus defined as:
+
 \[
-\pi^{-1}(p) \cong T_p \mathbb{M}^4 \cong \mathbb{R}^4
+\tilde{v}^\nu = \left.\frac{\partial y^\nu}{\partial x^\mu}\right|_p v^\mu = t^\nu_{\,\,\mu} v^\mu
 \]
 
-Sections allow us to define vector fields over spacetime:
+\subsection{Sections}
+
+An important definition in the context of fiber bundles is that of a section or cross-section. This concept enables the selection of an element from each fiber over each point in a continuous manner, facilitating the introduction of ideas such as vector fields over spacetime\cite{NakaharaGeometrytopologyphysics2005}.
+
+A \textbf{section} of a fiber bundle \(\pi : E \to B\) is defined as a continuous map \(s: B \to E\) such that
+
 \[
-s \in \Gamma(T\mathbb{M}^4)
+\pi \circ s = \mathrm{id}_B.
 \]
 
-\subsubsection*{The Cotangent Space}
+This condition ensures that exactly one point is chosen from each fiber continuously. 
+The set of all (smooth) sections is denoted by:
+\[
+\Gamma(E) := \left\{ s: \mathcal{M} \to E \mid \pi \circ s = \mathrm{id}_{\mathcal{M}} \right\}.
+\]
+It is also possible to define a section locally on an open set \(U \subset B\) as a map \(s: U \to E\) such that \(\pi \circ s = \mathrm{id}_U\). In this case, the section is called a \textbf{local section}.
 
-At this point, we introduce the cotangent space.  
-The cotangent space at a point is defined as the dual of the tangent space:
+
+\section{The cotangent bundle and differential forms}
+
+
+At this point, the cotangent space is introduced. The cotangent space at a point is defined as the dual of the tangent space:
 \[
 T_p^*\mathcal{M} := \text{Hom}_\mathbb{R}(T_p \mathcal{M}, \mathbb{R})
 \]
-That is, a covector $\omega \in T_p^*\mathcal{M}$ is a linear functional:
+A covector \(\omega \in T_p^*\mathcal{M}\) is a linear functional:
 \[
 \omega: T_p \mathcal{M} \to \mathbb{R}
 \]
 
-Given a coordinate basis of $T_p \mathcal{M}$:
+Given a coordinate basis of \(T_p \mathcal{M}\):
 \[
 \left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}
 \]
@@ -191,25 +204,19 @@ satisfying the relation:
 \[
 dx^i\left( \left. \frac{\partial}{\partial x^j} \right|_p \right) = \delta^i_j
 \]
-
-
-This is an example of a \textbf{vector bundle}, which is a fiber bundle where the fibers are vector spaces.
-
-
-
 \subsubsection*{The Cotangent Bundle}
 
-Analogous to the tangent bundle, the cotangent bundle is:
+Analogous to the tangent bundle, the cotangent bundle is defined as:
 \[
 T^*\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p^* \mathcal{M}
 \]
-This forms a vector bundle over $\mathcal{M}$.
+This structure constitutes a vector bundle over \(\mathcal{M}\).
 
-We define a section:
+A section of the cotangent bundle can be defined as:
 \[
 \omega \in \Gamma(T^* \mathcal{M})
 \]
-which assigns to each $p \in \mathcal{M}$ a covector $\omega_p \in T_p^*\mathcal{M}$ smoothly. Such a section is called a \textbf{1-form}.
+This section assigns to each \(p \in \mathcal{M}\) a covector \(\omega_p \in T_p^*\mathcal{M}\) smoothly. Such a section is referred to as a \textbf{1-form}.
 
 In a coordinate representation, a 1-form can be expressed as:
 \[
@@ -219,80 +226,40 @@ In a coordinate representation, a 1-form can be expressed as:
 
 \subsubsection*{Tensor Products and the Metric Tensor}
 
-Since the fibers are vector spaces, we can define tensor products of bundles.
+Utilizing the fact that the fibers are vector spaces, tensor products of bundles can be defined.
 
-For example:
+For instance:
 \[
 T^*\mathcal{M} \otimes T^*\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p^*\mathcal{M} \otimes T_p^*\mathcal{M}
 \]
-This forms a bundle whose fibers are bilinear forms on the tangent space.
+This forms a bundle whose fibers consist of bilinear forms on the tangent space.
 
-Sections of this bundle are called \((0,2)\)-tensor fields. A prominent example is the metric tensor.
+Sections of this bundle are referred to as \((0,2)\)-tensor fields. A prominent example of such fields is the metric tensor.
 
-We define the Minkowski metric as:
+The Minkowski metric is defined as:
 \[
 \eta \in \Gamma(T^*\mathcal{M} \otimes T^*\mathcal{M})
 \]
 
-In local coordinates:
+In local coordinates, the Minkowski metric can be expressed as:
 \[
 \eta = \eta_{\mu\nu} \, dx^\mu \otimes dx^\nu
 \quad \text{with} \quad \eta_{\mu\nu} = \text{diag}(1, -1, -1, -1)
 \]
 
-Notice that those sections are not called 2-forms. To define a \textbf{k-form}, we need to take the exterior product of two 1-forms, which is defined as follows:
+It is important to note that these sections are not classified as 2-forms. To define a \textbf{k-form}, it is necessary to take the exterior product of two 1-forms, which is defined as follows:
 
-Let $E \xrightarrow{\pi} B$ be a vector bundle and $\{e_\alpha\}$ be a basis of the fiber F. We define the \textbf{exterior product} as:
+Let \(E \xrightarrow{\pi} B\) be a vector bundle and \(\{e_\alpha\}\) be a basis of the fiber \(F\). The \textbf{exterior product} is defined by:
 \[e_\alpha \wedge e_\beta \equiv e_\alpha \otimes e_\beta - e_\beta \otimes e_\alpha\]
 
+A vector bundle \(\wedge^r (E)\) of totally antisymmetric \(r\)-tensors, known as the \textbf{exterior power} of the vector bundle \(E\), can be defined. The fibers of \(\wedge^r (E)\) are spanned by elements of the form \(\{ e_{\alpha_1} \wedge \dots \wedge e_{\alpha_r} \}\).
 
-We can define a vector bundle \( \wedge^r (E) \) of totally antisymmetric \( r \)-tensors, called the \textbf{exterior power} of the vector bundle \( E \). The fibers of \( \wedge^r (E) \) are spanned by elements of the form $\{ e_{\alpha_1} \wedge \dots \wedge e_{\alpha_r} \}$
- 
 The set of k-forms is defined as:
 \[\Omega^r(B) \equiv \Gamma(\wedge^r (T^*B))\]
-
 
 The \textbf{exterior derivative} is then defined as a map \cite{NakaharaGeometrytopologyphysics2005}:
 
 \begin{align*}
   d: \Omega^r(B) &\to \Omega^{r+1}(B) \\
-  \omega &\mapsto d\omega = \left( \frac{\partial}{ \partial x^\nu} \omega_{\mu_1 \dots \mu_r} \right) dx^\nu \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r}
+  \omega &\mapsto d\omega = \frac{1}{r!}\left( \frac{\partial}{ \partial x^\nu} \omega_{\mu_1 \dots \mu_r} \right) dx^\nu \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r}
 \end{align*}
-
-
-
-
-
-\subsubsection*{The Structure Group of a Fiber Bundle}
-
-Above, we defined a fiber bundle as a quadruple $(E, B, \pi, F)$ equipped with local trivializations. These local trivializations are given as diffeomorphisms on an open cover of the base space $B$. Thus, the definition does not require that $U_\alpha \cap U_\beta = \emptyset$. For a point $p \in U_\alpha \cap U_\beta$, we may have multiple local trivializations $\varphi_\alpha(p, f) = \varphi_{\alpha,p}(f)$ and $\varphi_\beta(p, f) = \varphi_{\beta,p}(f)$, defined on $U_\alpha$ and $U_\beta$, respectively. 
-
-We define the \textbf{structure group} $G$ of a fiber bundle as the Lie group of diffeomorphisms relating these local trivializations. The corresponding transition function is given by
-\[
-t_{\alpha\beta}(p) \equiv \varphi_{\alpha,p}^{-1} \circ \varphi_{\beta,p} : F \to F
-\]
-
-This defines a smooth map $t_{\alpha\beta}: U_\alpha \cap U_\beta \to G$ satisfying the following properties:
-\begin{align*}
-  t_{\alpha \alpha}(p) &= \mathrm{id}_F && \forall\, p \in U_\alpha \\
-  t_{\alpha\beta}(p) &= t_{\beta\alpha}(p)^{-1} && \forall\, p \in U_\alpha \cap U_\beta \\
-  t_{\alpha\beta}(p) \circ t_{\beta\gamma}(p) &= t_{\alpha\gamma}(p) && \forall\, p \in U_\alpha \cap U_\beta \cap U_\gamma
-\end{align*}
-
-In the case of the tangent bundle, the structure group is the general linear group $\mathrm{GL}(n, \mathbb{R})$, which consists of all invertible $n \times n$ matrices. This means that the transition functions between local trivializations are smooth maps from $\mathbb{R}^n$ to $\mathbb{R}^n$ that preserve linearity and invertibility.
-
-A fiber bundle with transition maps identical to the identity map is called a \textbf{trivial bundle}. In this case, the total space $E$ is diffeomorphic to the product space $B \times F$.
-In general, a fiber bundle has no unique trivialization. Let $\{\varphi_\alpha\}$ and $\{\tilde{\varphi}_\alpha\}$ be two local trivializations over the same open covering describing the same fiber bundle. Then these are related by maps $g_\alpha(p) : F \to F \quad \forall\, p \in B$ where each $g_\alpha(p)$ is a homeomorphism in the structure group $G$.
-\[
-g_\alpha(p) \equiv \varphi_{\alpha,p}^{-1} \circ \tilde{\varphi}_{\alpha,p}
-\]
-
-
-Again we take the tangent bundle as an example. Let $U_i$ and $U_j$ be overlapping chats with $p \in U_i \cap U_j$. With the basis $\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}$ and $\left\{ \left. \frac{\partial}{\partial y^j} \right|_p \right\}$, a vector $v \in T_p\mathcal{M}$ can be expressed in both bases as:
-\[
-v = v^{\mu} \frac{\partial}{\partial x^{\mu}} = \tilde{v}^{\mu} \frac{\partial}{\partial y^{\mu}}
-\]
-
-The transition function $t^\nu_{\,\,\mu}$ is then given by:
-\[ \tilde{v}^\nu = \left.\frac{\partial y^\nu}{\partial x^\mu}\right|_p v^\mu = t^\nu_{\,\,\mu}v^\mu \]
-
