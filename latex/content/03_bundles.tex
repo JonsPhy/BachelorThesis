@@ -5,7 +5,7 @@
 
 \section{Tangent Space $T_pM$}
 
-  Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(\mathcal{M}) \to \mathbb{R}$ satisfying the Leibniz rule\cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
+  Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(M) \to \mathbb{R}$ satisfying the Leibniz rule\cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
  \[ v[fg] = v[f]g(p) + f(p)v[g] \]
 
   A tangent vector at a point $p \in M$ can be constructed as the directional derivatives of an equivalence class of curves through $p$\cite{NakaharaGeometrytopologyphysics2005}.
@@ -40,23 +40,23 @@ The tangent space at a point $p \in M$ is then defined as the set of all tangent
 \section{The Tangent Bundle as a Fiber Bundle}
 
 To introduce the concept of fiber bundles, a detailed examination of a specific example, the tangent bundle, serves as an effective foundation.
-The tangent bundle of a smooth \( n \)-dimensional manifold \( \mathcal{M} \) is constructed by taking the disjoint union of all tangent spaces \( T_p\mathcal{M} \). This construction can be represented as:
+The tangent bundle of a smooth \( n \)-dimensional manifold \( M \) is constructed by taking the disjoint union of all tangent spaces \( T_pM \). This construction can be represented as:
 \[
-T\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M} = \bigcup_{p \in \mathcal{M}} \{p\} \times T_p\mathcal{M}
+TM := \bigsqcup_{p \in M} T_pM = \bigcup_{p \in M} \{p\} \times T_pM
 \]
-Here, \( T_p\mathcal{M} \) denotes the tangent space at a point \( p \in \mathcal{M} \). The tangent space \( T_p\mathcal{M} \) is a vector space that consists of all tangent vectors at the point \( p \). It should be noted that this notation emphasizes the pointwise nature of the tangent bundle, where each tangent space is associated with a specific point on the manifold. Since each tangent space is a different object, a certain tangent vector in a tangent space can only belong to that specific tangent space. Therefore all the information is already in the vector itself and the direct product notation \( \{p\} \times T_p\mathcal{M} \) is only used to clarify\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
+Here, \( T_pM \) denotes the tangent space at a point \( p \in M \). The tangent space \( T_pM \) is a vector space that consists of all tangent vectors at the point \( p \). It should be noted that this notation emphasizes the pointwise nature of the tangent bundle, where each tangent space is associated with a specific point on the manifold. Since each tangent space is a different object, a certain tangent vector in a tangent space can only belong to that specific tangent space. Therefore all the information is already in the vector itself and the direct product notation \( \{p\} \times T_pM \) is only used to clarify\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
 
-Each element of the tangent bundle \( T\mathcal{M} \) can be expressed as a pair \( (p, v) \), where \( p \) is a point on the manifold \( \mathcal{M} \), and \( v \) is a tangent vector belonging to the tangent space \( T_p\mathcal{M} \) at that point. 
+Each element of the tangent bundle \( TM \) can be expressed as a pair \( (p, v) \), where \( p \) is a point on the manifold \( M \), and \( v \) is a tangent vector belonging to the tangent space \( T_pM \) at that point. 
 
 A natural projection map is defined as follows:
 \[
-\pi: T\mathcal{M} \to \mathcal{M}, \quad (p, v) \mapsto p
+\pi: TM \to M, \quad (p, v) \mapsto p
 \]
 This projection, \( \pi \), serves to "forget" the tangent vector \( v \) associated with each point, effectively collapsing all the tangent vectors at \( p \) to the single point \( p \) in the base manifold\cite{NakaharaGeometrytopologyphysics2005}.
 
-The fiber over a point \( p \) is denoted as \( \pi^{-1}(p) = T_p\mathcal{M} \). This represents all the tangent vectors at the point \( p \). Since \( T_p\mathcal{M} \) is isomorphic to \( \mathbb{R}^n \) as a vector space, it is referred to as the model fiber, denoted \( F = \mathbb{R}^n \)\cite{NakaharaGeometrytopologyphysics2005}.
+The fiber over a point \( p \) is denoted as \( \pi^{-1}(p) = T_pM \). This represents all the tangent vectors at the point \( p \). Since \( T_pM \) is isomorphic to \( \mathbb{R}^n \) as a vector space, it is referred to as the model fiber, denoted \( F = \mathbb{R}^n \)\cite{NakaharaGeometrytopologyphysics2005}.
 
-Consider a coordinate chart \( (U, \varphi) \) on \( \mathcal{M} \). The chart \( \varphi \) provides a mapping from an open set \( U \subseteq \mathcal{M} \) to an open subset of \( \mathbb{R}^n \). A diffeomorphism on the preimage \( \pi^{-1}(U) \subset T\mathcal{M} \) can then be defined as:
+Consider a coordinate chart \( (U, \varphi) \) on \( M \). The chart \( \varphi \) provides a mapping from an open set \( U \subseteq M \) to an open subset of \( \mathbb{R}^n \). A diffeomorphism on the preimage \( \pi^{-1}(U) \subset TM \) can then be defined as:
 \[
 \Psi: \pi^{-1}(U) \to \mathbb{R}^{2n}, \quad (p, v) \mapsto \left(x^1(p), \dots, x^n(p), v^1, \dots, v^n \right)
 \]
@@ -69,11 +69,11 @@ TM|_U \cong U \times \mathbb{R}^n
 
 In summary, the construction of the tangent bundle yields a fiber bundle characterized by the following essential components:
 \begin{itemize}
-  \item \textbf{Total space:} \( T\mathcal{M} = \bigsqcup_{p \in \mathcal{M}} T_p\mathcal{M} \), encapsulating all tangent spaces.
-  \item \textbf{Base space:} \( \mathcal{M} \), a manifold to which additional structure is added.
-  \item \textbf{Projection:} \( \pi: T\mathcal{M} \to \mathcal{M} \), mapping each tangent vector to its associated point on the manifold.
+  \item \textbf{Total space:} \( TM = \bigsqcup_{p \in M} T_pM \), encapsulating all tangent spaces.
+  \item \textbf{Base space:} \( M \), a manifold to which additional structure is added.
+  \item \textbf{Projection:} \( \pi: TM \to M \), mapping each tangent vector to its associated point on the manifold.
   \item \textbf{Model fiber:} \( F = \mathbb{R}^n \), serving as the standard fiber structure over each point.
-  \item \textbf{Local trivialization:} \( T\mathcal{M}|_U \cong U \times \mathbb{R}^n \), ensuring that the tangent bundle locally resembles a product structure.
+  \item \textbf{Local trivialization:} \( TM|_U \cong U \times \mathbb{R}^n \), ensuring that the tangent bundle locally resembles a product structure.
 \end{itemize}
 
  Similar to the way a manifold is commonly perceived as a space that locally resembles \( \mathbb{R}^n \), a fiber bundle may be conceptualized as a space that locally resembles the Cartesian product of the base space with a typical fiber structure. 
@@ -150,7 +150,7 @@ Generally, a fiber bundle does not possess a unique trivialization. Let \(\{\var
 g_\alpha(p) \equiv \varphi_{\alpha,p}^{-1} \circ \tilde{\varphi}_{\alpha,p}
 \]
 
-Considering the tangent bundle as an illustrative example\cite{NakaharaGeometrytopologyphysics2005}, let \(U_i\) and \(U_j\) represent overlapping charts with \(p \in U_i \cap U_j\). Utilizing the basis \(\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}\) and \(\left\{ \left. \frac{\partial}{\partial y^j} \right|_p \right\}\), a vector \(v \in T_p\mathcal{M}\) can be expressed in both bases as:
+Considering the tangent bundle as an illustrative example\cite{NakaharaGeometrytopologyphysics2005}, let \(U_i\) and \(U_j\) represent overlapping charts with \(p \in U_i \cap U_j\). Utilizing the basis \(\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}\) and \(\left\{ \left. \frac{\partial}{\partial y^j} \right|_p \right\}\), a vector \(v \in T_pM\) can be expressed in both bases as:
 
 \[
 v = v^{\mu} \frac{\partial}{\partial x^{\mu}} = \tilde{v}^{\mu} \frac{\partial}{\partial y^{\mu}}
@@ -175,28 +175,24 @@ A \textbf{section} of a fiber bundle \(\pi : E \to B\) is defined as a continuou
 This condition ensures that exactly one point is chosen from each fiber continuously. 
 The set of all (smooth) sections is denoted by:
 \[
-\Gamma(E) := \left\{ s: \mathcal{M} \to E \mid \pi \circ s = \mathrm{id}_{\mathcal{M}} \right\}.
+\Gamma(E) := \left\{ s: M \to E \mid \pi \circ s = \mathrm{id}_{M} \right\}.
 \]
 It is also possible to define a section locally on an open set \(U \subset B\) as a map \(s: U \to E\) such that \(\pi \circ s = \mathrm{id}_U\). In this case, the section is called a \textbf{local section}.
 
 
 \section{The cotangent bundle and differential forms}
 
-
-At this point, the cotangent space is introduced. The cotangent space at a point is defined as the dual of the tangent space:
+\subsection{The Cotangent Bundle}
+In this section the fundamental concepts of the cotangent bundle are introduced, which is essential for the definition of differential forms and the exterior derivative. The cotangent space at a point $p$ on a manifold $M$ is defined as the dual space of the tangent space at that point. Formally, the cotangent space at a point $p \in M$ is the set of all linear maps from the tangent space at that point to the real numbers\cite{NakaharaGeometrytopologyphysics2005}.
 \[
-T_p^*\mathcal{M} := \text{Hom}_\mathbb{R}(T_p \mathcal{M}, \mathbb{R})
+T_p^*M := \text{Hom}_\mathbb{R}(T_p M, \mathbb{R})
 \]
-A covector \(\omega \in T_p^*\mathcal{M}\) is a linear functional:
+A covector \(\omega \in T_p^*M\) is such a linear function:
 \[
-\omega: T_p \mathcal{M} \to \mathbb{R}
+\omega: T_p M \to \mathbb{R}
 \]
-
-Given a coordinate basis of \(T_p \mathcal{M}\):
-\[
-\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}
-\]
-the dual basis is:
+As an example, consider a function \(f \in C^\infty(M)\) and some tangent vector $v \in T_pM$. Then $v[f] \in \mathbb{R}$ by definition. The differential of \(f\) at a point \(p\) is a covector $df_p$ and therefore $df_p[v]\in \mathbb{R}$ is simply defined as $df_p[v] = v[f]$.
+Given a coordinate basis \(\left\{ \left. \frac{\partial}{\partial x^i} \right|_p \right\}\)  of \(T_p M\) the dual basis is:
 \[
 \left\{ \left. dx^i \right|_p \right\}
 \]
@@ -204,57 +200,50 @@ satisfying the relation:
 \[
 dx^i\left( \left. \frac{\partial}{\partial x^j} \right|_p \right) = \delta^i_j
 \]
-\subsubsection*{The Cotangent Bundle}
-
-Analogous to the tangent bundle, the cotangent bundle is defined as:
+The example from before can thus be expressed as:
 \[
-T^*\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p^* \mathcal{M}
+df_p = \frac{\partial f}{\partial x^i} dx^i \quad \text{and} \quad df_p[v] = v^i \left. \frac{\partial f}{\partial x^i} \right|_p
 \]
-This structure constitutes a vector bundle over \(\mathcal{M}\).
-
-A section of the cotangent bundle can be defined as:
+Analogous to the tangent bundle, the cotangent bundle is defined as the disjoint union of all cotangent spaces at each point in the manifold:
 \[
-\omega \in \Gamma(T^* \mathcal{M})
+T^*M := \bigsqcup_{p \in M} T_p^* M
 \]
-This section assigns to each \(p \in \mathcal{M}\) a covector \(\omega_p \in T_p^*\mathcal{M}\) smoothly. Such a section is referred to as a \textbf{1-form}.
-
-In a coordinate representation, a 1-form can be expressed as:
+This structure constitutes a vector bundle over \(M\). A section of the cotangent bundle can be defined as:
+\[
+\omega \in \Gamma(T^* M)
+\]
+This section assigns to each \(p \in M\) a covector \(\omega_p \in T_p^*M\) smoothly. Such a section is referred to as a \textbf{1-form}. In a coordinate representation, a 1-form can be expressed as:
 \[
 \omega = \sum_{i=1}^n \omega_i(x) \, dx^i
-\quad \text{with} \quad \omega_i \in C^\infty(\mathcal{M})
+\quad \text{with} \quad \omega_i \in C^\infty(M)
 \]
 
-\subsubsection*{Tensor Products and the Metric Tensor}
+\subsection{Tensor Fields and the Metric Tensor}
 
-Utilizing the fact that the fibers are vector spaces, tensor products of bundles can be defined.
-
-For instance:
+Utilizing the fact that the fibers of the cotangent bundle are vector spaces, tensor products of bundles can be defined. For instance:
 \[
-T^*\mathcal{M} \otimes T^*\mathcal{M} := \bigsqcup_{p \in \mathcal{M}} T_p^*\mathcal{M} \otimes T_p^*\mathcal{M}
+T^*M \otimes T^*M := \bigsqcup_{p \in M} T_p^*M \otimes T_p^*M
 \]
-This forms a bundle whose fibers consist of bilinear forms on the tangent space.
-
-Sections of this bundle are referred to as \((0,2)\)-tensor fields. A prominent example of such fields is the metric tensor.
-
-The Minkowski metric is defined as:
+This forms a bundle whose fibers consist of maps form $TM \otimes TM$ to $\mathbb{R}$. Sections of this bundle are referred to as \((0,2)\)-tensor fields. A prominent example of such fields is the metric tensor. The Minkowski metric is defined as:
 \[
-\eta \in \Gamma(T^*\mathcal{M} \otimes T^*\mathcal{M})
+\eta \in \Gamma(T^*M \otimes T^*M)
 \]
-
 In local coordinates, the Minkowski metric can be expressed as:
 \[
 \eta = \eta_{\mu\nu} \, dx^\mu \otimes dx^\nu
 \quad \text{with} \quad \eta_{\mu\nu} = \text{diag}(1, -1, -1, -1)
 \]
+In general, a tensor field of type $(i,j)$ is a section of the bundle\cite{NakaharaGeometrytopologyphysics2005}:
+\[ \otimes^iT^*M \otimes^jTM \]
 
-It is important to note that these sections are not classified as 2-forms. To define a \textbf{k-form}, it is necessary to take the exterior product of two 1-forms, which is defined as follows:
+
+\subsection{Differential Forms and the Exterior Derivative}
+To define a \textbf{k-form}, it is necessary to take the exterior product of 1-forms, which is defined as follows:
 
 Let \(E \xrightarrow{\pi} B\) be a vector bundle and \(\{e_\alpha\}\) be a basis of the fiber \(F\). The \textbf{exterior product} is defined by:
 \[e_\alpha \wedge e_\beta \equiv e_\alpha \otimes e_\beta - e_\beta \otimes e_\alpha\]
 
-A vector bundle \(\wedge^r (E)\) of totally antisymmetric \(r\)-tensors, known as the \textbf{exterior power} of the vector bundle \(E\), can be defined. The fibers of \(\wedge^r (E)\) are spanned by elements of the form \(\{ e_{\alpha_1} \wedge \dots \wedge e_{\alpha_r} \}\).
-
-The set of k-forms is defined as:
+A vector bundle \(\wedge^r (E)\) of totally antisymmetric \(r\)-tensors, known as the \textbf{exterior power} of the vector bundle \(E\), can be defined. The fibers of \(\wedge^r (E)\) are spanned by elements of the form \(\{ e_{\alpha_1} \wedge \dots \wedge e_{\alpha_r} \}\).The set of k-forms is defined as:
 \[\Omega^r(B) \equiv \Gamma(\wedge^r (T^*B))\]
 
 The \textbf{exterior derivative} is then defined as a map \cite{NakaharaGeometrytopologyphysics2005}:
