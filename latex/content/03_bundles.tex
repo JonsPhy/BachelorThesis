@@ -238,17 +238,32 @@ In general, a tensor field of type $(i,j)$ is a section of the bundle\cite{Nakah
 
 
 \subsection{Differential Forms and the Exterior Derivative}
-To define a \textbf{k-form}, it is necessary to take the exterior product of 1-forms, which is defined as follows:
-
-Let \(E \xrightarrow{\pi} B\) be a vector bundle and \(\{e_\alpha\}\) be a basis of the fiber \(F\). The \textbf{exterior product} is defined by:
-\[e_\alpha \wedge e_\beta \equiv e_\alpha \otimes e_\beta - e_\beta \otimes e_\alpha\]
-
-A vector bundle \(\wedge^r (E)\) of totally antisymmetric \(r\)-tensors, known as the \textbf{exterior power} of the vector bundle \(E\), can be defined. The fibers of \(\wedge^r (E)\) are spanned by elements of the form \(\{ e_{\alpha_1} \wedge \dots \wedge e_{\alpha_r} \}\).The set of k-forms is defined as:
-\[\Omega^r(B) \equiv \Gamma(\wedge^r (T^*B))\]
+A \textbf{k-form} or \textbf{differential form} of order k is a totally antisymmetric $(k,0)$ tensor. To define a k-form, it is necessary to take the \textbf{wedge product} of 1-forms, which is defined by taking the totally antisymmetrized tensor product of 1-forms. This means that all permutations of the tensor product are considered, with even permutations contributing positively and odd permutations contributing negatively. Consider the cotangent space $T_p^*M$ of a manifold $M$ at a point $p$ with basis $\{dx^\mu\}$. The wedge product of two 1-forms \(dx^\mu\) and \(dx^\nu\) thus reads:
+\[
+dx^\mu \wedge dx^\nu = dx^\mu \otimes dx^\nu - dx^\nu \otimes dx^\mu
+\]
+Higher order forms can be constructed analogously. By taking the cotangent bundle \(T^*M\) and considering the antisymmetrized tensor product, we can define fields of differential forms of order \(r\) as:
+\[\Omega^r(M) \equiv \Gamma(\wedge^r (T^*M))\]
 
 The \textbf{exterior derivative} is then defined as a map \cite{NakaharaGeometrytopologyphysics2005}:
-
 \begin{align*}
   d: \Omega^r(B) &\to \Omega^{r+1}(B) \\
   \omega &\mapsto d\omega = \frac{1}{r!}\left( \frac{\partial}{ \partial x^\nu} \omega_{\mu_1 \dots \mu_r} \right) dx^\nu \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r}
 \end{align*}
+
+In the following, two relations will be shown that will be used in later proofs\cite{NakaharaGeometrytopologyphysics2005}. First consider the action of the exterior derivative on a 1-form $\omega=\omega_\mu dx^\mu \in \Omega^1(M)$ on two tangent vector fields $v=v^\mu\frac{\partial}{\partial x^\mu}$ and $w=w^\nu\frac{\partial}{\partial x^\nu}$:
+\begin{align*}
+  d\omega(v, w) 
+  &= \left( \frac{\partial \omega_\mu}{\partial x^\nu} \, dx^\nu \wedge dx^\mu \right)(v, w) \\
+  &= \frac{\partial \omega_\mu}{\partial x^\nu} 
+  \left( dx^\nu(v) \, dx^\mu(w) - dx^\nu(w) \, dx^\mu(v) \right) \\
+  &= \frac{\partial \omega_\mu}{\partial x^\nu} 
+  \left( v^\nu w^\mu - w^\nu v^\mu \right) \\
+  &= v^\nu \frac{\partial}{\partial x^\nu} \left( \omega_\mu w^\mu \right)
+  - w^\nu \frac{\partial}{\partial x^\nu} \left( \omega_\mu v^\mu \right)
+  - \omega_\mu \left( v^\nu \frac{\partial w^\mu}{\partial x^\nu} - w^\nu \frac{\partial v^\mu}{\partial x^\nu} \right) \\
+  &= v[\omega(w)] - w[\omega(v)] - \omega([v, w])
+\end{align*}
+This gives a coordinate free expression for the action of the exterior derivative of a 1-form.Furthermore, it can easily be shown that the exterior derivative of a exterior derivative is zero, by using the fact that the product of a symmetric and an antisymmetric tensor is zero. By definition the following is obtained:
+\[ d^2\omega = \frac{1}{r!}\left( \frac{\partial^2}{ \partial x^\alpha x^\beta} \omega_{\mu_1 \dots \mu_r} \right) dx^\alpha \wedge dx^\beta \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r} \]
+From this it follows instantly that $d^2=0$ since $\frac{\partial^2}{ \partial x^\alpha x^\beta}$ is symmetric and the wedge product is antisymmetric.
