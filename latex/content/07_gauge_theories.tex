@@ -56,29 +56,39 @@ Together, these two identities form the homogeneous Maxwell equations:
 
 \section{Yang-Mills theory}
 
-The same may be done for non-Abelian gauge theories. Consider the structure group $G=SU(2)\times U(1)$ which in physics describes the electro-weak theory. Again the bundle is tribial $P = M \times G$, and the projection map is given by $\pi: P \to M$, $\pi(x,g) = x$. The Yang-Mills field is given by:
-\[ \mathcal{A} = A_\mu^a T^a dx^\mu = W_\mu^a\tau^a dx^\mu + B_\mu Y dx^\mu \]
-Where $\tau^a$ are the generators of $SU(2)$, $Y$ is the generator of $U(1)$, and $W_\mu^a$ and $B_\mu$ are the gauge potentials. The corresponding field strengths are given by:
-\[ \mathscr{F} = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A} \]
+The same construction applies to non-Abelian gauge theories with structure group \( G = SU(N) \). We consider a trivial principal bundle over the spacteime manifold \( P = M \times SU(N) \), with projection map \( \pi: P \to M \), \( \pi(x, g) = x \). The Yang–Mills field is given by a \( \mathfrak{su}(N) \)-valued one-form:
 \[
-\mathscr{F}^{(W)} = dW + W \wedge W, \qquad \mathscr{F}^{(B)} = dB
+\mathcal{A} = A_\mu^a T^a dx^\mu,
 \]
-With
+where \( T^a \in \mathfrak{su}(N) \) are the generators of the Lie algebra of \( SU(N) \), and \( A_\mu^a \) are the gauge potentials. The corresponding field strength (curvature two-form) is given by:
+\[
+\mathscr{F} = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A}.
+\]
+In components, this reads:
 \begin{align*}
-  \mathscr{F}^{(W)}_{\mu\nu} 
-  &= \partial_\mu W_\nu^a \, \tau^a - \partial_\nu W_\mu^a \, \tau^a + W_\mu^b W_\nu^c [\tau^b, \tau^c] \\[0.8em]
-  &= \left( \partial_\mu W_\nu^a - \partial_\nu W_\mu^a + f^{abc} W_\mu^b W_\nu^c \right) \tau^a 
-  =: W_{\mu\nu}^a \tau^a \\[1.2em]
-  \mathscr{F}^{(B)}_{\mu\nu} 
-  &= (\partial_\mu B_\nu - \partial_\nu B_\mu)Y =: B_{\mu\nu} Y
+  \mathscr{F}_{\mu\nu} 
+  &= \partial_\mu A_\nu^a T^a - \partial_\nu A_\mu^a T^a + A_\mu^b A_\nu^c [T^b, T^c] \\[0.8em]
+  &= \left( \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + f^{abc} A_\mu^b A_\nu^c \right) T^a 
+  =: F_{\mu\nu}^a T^a,
 \end{align*}
+where \( f^{abc} \) are the structure constants of \( \mathfrak{su}(N) \), defined via \( [T^b, T^c] = f^{abc} T^a \).
 
-The Bianchi identity reads:
+The Bianchi identity holds:
 \[
-D \mathscr{F} = d\mathscr{F} + [\mathcal{A}, \mathscr{F}] = 0
+D\mathscr{F} = d\mathscr{F} + [\mathcal{A}, \mathscr{F}] = 0,
 \]
-which splits into:
-\begin{align*}
-  D^{(W)} \mathscr{F}^{(W)} &= d\mathscr{F}^{(W)} + [W, \mathscr{F}^{(W)}] = 0 \\
-  d\mathscr{F}^{(B)} &= 0
-\end{align*}
+which in components becomes:
+\[
+D_\lambda F_{\mu\nu}^a 
+= \partial_\lambda F_{\mu\nu}^a + f^{abc} A_\lambda^b F_{\mu\nu}^c = 0.
+\]
+
+
+\section{Gauge sector of the standard model of particle physics}
+
+The above elaboration of gauge theories can be applied to the gauge sector of the standard model of particle physics. It is described by a principal bundle with the gauge group \( SU(3) \times SU(2) \times U(1) \). Combining the above results, the action describing the dynamics of the gauge fields may be written as:
+\[
+S_{\text{gauge}} =  \int_M d^4x -\frac{1}{4}\left( G_{\mu\nu}^{a} G^{a\,\mu\nu} + W_{\mu\nu}^{i} W^{i\,\mu\nu} + B_{\mu\nu} B^{\mu\nu} \right) \, \mathrm{d}^4x
+\]
+where \( G_{\mu\nu}^a \), \( W_{\mu\nu}^i \), and \( B_{\mu\nu} \) denote the field strength components of the curvature two-forms corresponding to \( SU(3) \), \( SU(2) \), and \( U(1) \), respectively. These arise from the decomposition of the total curvature \( \mathscr{F} \in \mathfrak{g} \otimes \Omega^2(M) \). 
+
