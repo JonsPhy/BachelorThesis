@@ -5,17 +5,17 @@
 
 \section{Tangent Space $T_pM$}
 
-  Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(M) \to \mathbb{R}$ satisfying the Leibniz rule\cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
+  Let $M$ be an $n$-dimensional smooth manifold. A tangent vector at a point $p \in M$ is a linear map $v: C^\infty(M) \to \mathbb{R}$ satisfying the Leibniz rule \cite{FredericSchullerDifferentialstructurespivotalconcepttangentvectorspacesLec09FredericSchuller2015}:
  \[ v[fg] = v[f]g(p) + f(p)v[g] \]
 
   A tangent vector at a point $p \in M$ can be constructed as the directional derivatives of an equivalence class of curves through $p$\cite{NakaharaGeometrytopologyphysics2005}.
 
-  Let $\gamma: [-\epsilon, \epsilon] \to M$ be a smooth curve in $M$ with $\gamma(0)=p$. Then $\phi \circ \gamma(t) = x(t) \in \mathbb{R}^n$ is called the coordinate representation of $\gamma$ induces by a chart $(U, \varphi)$.
+  Let $\gamma: [-\epsilon, \epsilon] \to M$ be a smooth curve in $M$ with $\gamma(0)=p$. Then $\phi \circ \gamma(t) = x(t) \in \mathbb{R}^n$ is called the coordinate representation of $\gamma$ induced by a chart $(U, \varphi)$.
 Let $f \in C^\infty(M)$ be a smooth function on $M$. The directional derivative of $f$ along the curve $\gamma$ at $t=0$ is given by:
 \begin{align*}
 \left. \frac{d}{dt} (f \circ \gamma)(t) \right|_{t=0}
-  &= \left. \frac{d}{dt} \left( f\circ \varphi^{-1}\circ\varphi\circ\gamma(t) \right) \right|_{t=0} \\
-&= \left. \frac{\partial f}{\partial x^r} \frac{d x^r}{dt} \right|_{t=0} \\
+  &= \left. \frac{d}{dt} \left( f\circ \varphi^{-1}\circ\varphi\circ\gamma(t) \right) \right|_{t=0} \\[0.8em]
+&= \left. \frac{\partial f}{\partial x^r} \frac{d x^r}{dt} \right|_{t=0} \\[0.8em]
 &= \left. \frac{d x^r}{dt} \right|_{t=0} \left. \frac{\partial f}{\partial x^r} \right|_p
 \end{align*}
 
@@ -43,23 +43,23 @@ The tangent bundle of a smooth \( n \)-dimensional manifold \( M \) is construct
 \[
 TM := \bigsqcup_{p \in M} T_pM = \bigcup_{p \in M} \{p\} \times T_pM
 \]
-Here, \( T_pM \) denotes the tangent space at a point \( p \in M \). The tangent space \( T_pM \) is a vector space that consists of all tangent vectors at the point \( p \). It should be noted that this notation emphasizes the pointwise nature of the disjoint union, where each tangent space is associated with a specific point on the manifold. Since each tangent space is a different object, a certain tangent vector in a tangent space can only belong to that specific tangent space. Therefore all the information is already in the vector itself and the direct product notation \( \{p\} \times T_pM \) is only used to clarify\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
+Here, \( T_pM \) denotes the tangent space at a point \( p \in M \). The tangent space \( T_pM \) is a vector space that consists of all tangent vectors at the point \( p \). It should be noted that this notation emphasizes the pointwise nature of the disjoint union, where each tangent space is associated with a specific point on the manifold. Since each tangent space is a different object, a certain tangent vector in a tangent space can only belong to that specific tangent space. Therefore all the information is already in the vector itself and the direct product notation \( \{p\} \times T_pM \) is only used to clarify \cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}.
 
 Each element of the tangent bundle \( TM \) can be expressed as a pair \( (p, v) \), where \( p \) is a point on the manifold \( M \), and \( v \) is a tangent vector belonging to the tangent space \( T_pM \) at that point. 
 A natural projection map is defined as follows:
 \[
 \pi: TM \to M, \quad (p, v) \mapsto p
 \]
-This projection, \( \pi \), serves to "forget" the tangent vector \( v \) associated with each point, effectively collapsing all the tangent vectors at \( p \) to the single point \( p \) in the base manifold\cite{NakaharaGeometrytopologyphysics2005}.
+This projection, \( \pi \), serves to "forget" the tangent vector \( v \) associated with each point, effectively collapsing all the tangent vectors at \( p \) to the single point \( p \) in the base manifold \cite{NakaharaGeometrytopologyphysics2005}.
 
-The fiber over a point \( p \) is denoted as \( \pi^{-1}(p) = T_pM \). This represents all the tangent vectors at the point \( p \). Since \( T_pM \) is isomorphic to \( \mathbb{R}^n \) as a vector space, it is referred to as the model fiber, denoted \( F = \mathbb{R}^n \)\cite{NakaharaGeometrytopologyphysics2005}.
+The fiber over a point \( p \) is denoted as \( \pi^{-1}(p) = T_pM \). This represents all the tangent vectors at the point \( p \). Since \( T_pM \) is isomorphic to \( \mathbb{R}^n \) as a vector space, it is referred to as the model fiber, denoted \( F = \mathbb{R}^n \) \cite{NakaharaGeometrytopologyphysics2005}.
 Since the fiber of the tangent bundle is a vector space, the tangent bundle is also referred to as a \textbf{vector bundle}.
 
 Consider a coordinate chart \( (U, \varphi) \) on \( M \). The chart \( \varphi \) provides a mapping from an open set \( U \subseteq M \) to an open subset of \( \mathbb{R}^n \). A diffeomorphism on the preimage \( \pi^{-1}(U) \subset TM \) can then be defined as:
 \[
 \Psi: \pi^{-1}(U) \to \mathbb{R}^{2n}, \quad (p, v) \mapsto \left(x^1(p), \dots, x^n(p), v^1, \dots, v^n \right)
 \]
-where the coordinates \( x^i(p) \) represent the local coordinates of the point \( p \) in \( U \), and \( v = v^i \left. \frac{\partial}{\partial x^i} \right|_p \) describes the tangent vector in terms of its components in the chosen coordinate system\cite{NakaharaGeometrytopologyphysics2005}.
+where the coordinates \( x^i(p) \) represent the local coordinates of the point \( p \) in \( U \), and \( v = v^i \left. \frac{\partial}{\partial x^i} \right|_p \) describes the tangent vector in terms of its components in the chosen coordinate system \cite{NakaharaGeometrytopologyphysics2005}.
 This establishes a local trivialization of the tangent bundle, expressed as:
 \[
 TM|_U \cong U \times \mathbb{R}^n
@@ -79,7 +79,7 @@ In summary, the construction of the tangent bundle yields a fiber bundle charact
 
 \section{Definition of a Fiber Bundle}
 
-The formal definition of a fiber bundle reads as follows\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015}\cite{DudekEhreshmanntheoryconnectionprincipalbundlecompendiumphysicists2018}.
+The formal definition of a fiber bundle reads as follows\cite{FredericSchullerTopologicalmanifoldsmanifoldbundlesLec06FredericSchuller2015, DudekEhreshmanntheoryconnectionprincipalbundlecompendiumphysicists2018}.
 A fiber bundle is a quadruple $(E, B, \pi, F)$ where:
 \begin{itemize}
   \item $E$ is the total space
@@ -98,12 +98,12 @@ such that the following diagram commutes:
 \begin{center}
 \begin{tikzpicture}[scale=1.5, every node/.style={font=\normalsize}]
   \node (A) at (0,1.5) {$\pi^{-1}(U)$};
-  \node (B) at (3.5,1.5) {$U \times F$};
+  \node (B) at (3,1.5) {$U \times F$};
   \node (C) at (0,0) {$U$};
 
   \draw[->] (A) -- (B) node[midway, above] {$\varphi$};
   \draw[->] (A) -- (C) node[midway, left] {$\pi$};
-  \draw[->] (B) -- (C) node[midway, right] {$\mathrm{proj}_1$};
+  \draw[->] (B) -- (C) node[midway, right, yshift=-3pt] {$\mathrm{proj}_1$};
 \end{tikzpicture}
 \end{center}
 
@@ -226,7 +226,7 @@ In local coordinates, the Minkowski metric can be expressed as:
 \eta = \eta_{\mu\nu} \, dx^\mu \otimes dx^\nu
 \quad \text{with} \quad \eta_{\mu\nu} = \text{diag}(1, -1, -1, -1)
 \]
-In general, a tensor field of type $(i,j)$ is a section of the bundle\cite{NakaharaGeometrytopologyphysics2005}:
+In general, a tensor field of type $(i,j)$ is a section of the bundle \cite{NakaharaGeometrytopologyphysics2005}:
 \[ \otimes^iT^*M \otimes^jTM \]
 
 
@@ -244,7 +244,7 @@ The \textbf{exterior derivative} is then defined as a map \cite{NakaharaGeometry
   \omega &\mapsto d\omega = \frac{1}{r!}\left( \frac{\partial}{ \partial x^\nu} \omega_{\mu_1 \dots \mu_r} \right) dx^\nu \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r}
 \end{align*}
 
-In the following, two relations will be shown that will be used in later proofs\cite{NakaharaGeometrytopologyphysics2005}. First consider the action of the exterior derivative on a 1-form $\omega=\omega_\mu dx^\mu \in \Omega^1(M)$ on two tangent vector fields $v=v^\mu\frac{\partial}{\partial x^\mu}$ and $w=w^\nu\frac{\partial}{\partial x^\nu}$:
+In the following, two relations will be shown that will be used in later proofs \cite{NakaharaGeometrytopologyphysics2005}. First consider the action of the exterior derivative on a 1-form $\omega=\omega_\mu dx^\mu \in \Omega^1(M)$ on two tangent vector fields $v=v^\mu\frac{\partial}{\partial x^\mu}$ and $w=w^\nu\frac{\partial}{\partial x^\nu}$:
 \begin{align*}
   d\omega(V, W) 
   &= \left( \frac{\partial \omega_\mu}{\partial x^\nu} \, dx^\nu \wedge dx^\mu \right)(V, W) \\
@@ -257,6 +257,8 @@ In the following, two relations will be shown that will be used in later proofs\
   - \omega_\mu \left( V^\nu \frac{\partial W^\mu}{\partial x^\nu} - W^\nu \frac{\partial V^\mu}{\partial x^\nu} \right) \\
   &= V[\omega(W)] - W[\omega(V)] - \omega([V, W])
 \end{align*}
-This gives a coordinate free expression for the action of the exterior derivative of a 1-form.Furthermore, it can easily be shown that the exterior derivative of a exterior derivative is zero, by using the fact that the product of a symmetric and an antisymmetric tensor is zero. By definition the following is obtained:
+This gives a coordinate free expression for the action of the exterior derivative of a 1-form. Furthermore, it can easily be shown that the exterior derivative of a exterior derivative is zero, by using the fact that the product of a symmetric and an antisymmetric tensor is zero. By definition the following is obtained:
 \[ d^2\omega = \frac{1}{r!}\left( \frac{\partial^2}{ \partial x^\alpha x^\beta} \omega_{\mu_1 \dots \mu_r} \right) dx^\alpha \wedge dx^\beta \wedge dx^{\mu_1} \wedge \dots \wedge dx^{\mu_r} \]
 From this it follows instantly that $d^2=0$ since $\frac{\partial^2}{ \partial x^\alpha x^\beta}$ is symmetric and the wedge product is antisymmetric.
+
+
