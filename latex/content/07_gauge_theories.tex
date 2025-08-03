@@ -79,16 +79,24 @@ D\mathscr{F} = d\mathscr{F} + [\mathcal{A}, \mathscr{F}] = 0,
 \]
 which in components becomes:
 \[
-D_\lambda F_{\mu\nu}^a 
-= \partial_\lambda F_{\mu\nu}^a + f^{abc} A_\lambda^b F_{\mu\nu}^c = 0.
+\partial_\lambda F_{\mu\nu}^a + f^{abc} A_\lambda^b F_{\mu\nu}^c = 0.
 \]
 
 
 \section{Gauge sector of the standard model of particle physics}
 
-The above elaboration of gauge theories can be applied to the gauge sector of the standard model of particle physics. It is described by a principal bundle with the gauge group \( SU(3) \times SU(2) \times U(1) \). Combining the above results, the action describing the dynamics of the gauge fields may be written as:
+The above elaboration of gauge theories can be applied to the gauge sector of the standard model of particle physics. It is described by a principal bundle with gauge group \( SU(3) \times SU(2) \times U(1) \), and a corresponding connection one-form \( \mathcal{A} \in \Omega^1(M, \mathfrak{g}) \), with curvature \( \mathscr{F} = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A} \in \Omega^2(M, \mathfrak{g}) \). The total gauge action takes the form:
 \[
-S_{\text{gauge}} =  \int_M d^4x -\frac{1}{4}\left( G_{\mu\nu}^{a} G^{a\,\mu\nu} + W_{\mu\nu}^{i} W^{i\,\mu\nu} + B_{\mu\nu} B^{\mu\nu} \right) \, \mathrm{d}^4x
+S_{\text{gauge}} = -\frac{1}{2} \int_M \mathrm{Tr}(\mathscr{F}_{\mu\nu} \mathscr{F}^{\mu\nu}) \, \mathrm{d}^4x,
 \]
-where \( G_{\mu\nu}^a \), \( W_{\mu\nu}^i \), and \( B_{\mu\nu} \) denote the field strength components of the curvature two-forms corresponding to \( SU(3) \), \( SU(2) \), and \( U(1) \), respectively. These arise from the decomposition of the total curvature \( \mathscr{F} \in \mathfrak{g} \otimes \Omega^2(M) \). 
+where the trace is taken over the Lie algebra representation. Here, the normalization $\text{Tr}[T^aT^b]=\frac12\delta_{ab}$ was used, which is common in physics literature. This ensures that the action written in components has the proper normalization.
+\[
+S_{\text{gauge}} = \int_M \mathrm{d}^4x \, \left( 
+  -\frac{1}{4} G_{\mu\nu}^{a} G^{a\,\mu\nu} 
+  -\frac{1}{4} W_{\mu\nu}^{i} W^{i\,\mu\nu} 
+  -\frac{1}{4} B_{\mu\nu} B^{\mu\nu} 
+\right),
+\]
+where \( G_{\mu\nu}^a \), \( W_{\mu\nu}^i \), and \( B_{\mu\nu} \) are the field strength components derived from the respective gauge subgroups. These arise from the decomposition of the total curvature two-form \( \mathscr{F} \in \mathfrak{g} \otimes \Omega^2(M) \), with \( \mathfrak{g} = \mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1) \).
 
+The above construction provides the geometric foundation for Yang–Mills theory as applied in the standard model.
