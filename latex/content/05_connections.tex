@@ -19,11 +19,20 @@ F_* : T_pM \longrightarrow T_{F(p)}N.
 \]
 This is identified using \( (F_*v)(f) = v(f\circ F) \) for \( v \in T_pM \) and \( f \in C^\infty(N) \).
 
+The \textbf{Pullback} \cite{NakaharaGeometrytopologyphysics2005} of a smooth map \( F:M \longrightarrow N \) between smooth manifolds \( M \) and \( N \) is defined as a map between the cotangent spaces:
+\[
+F^* : T^*_{F(p)}N \longrightarrow T^*_pM.
+\]
+This is characterized by the relation
+\[
+(F^*\omega)(v) = \omega(F_*v)
+\]
+for \( \omega \in T^*_{F(p)}N \) and \( v \in T_pM \), where \( F_* \) is the pushforward of \( F \).
+ 
 The pushforward of the projection map \( \pi_* : TP \longrightarrow TM \) facilitates the construction of the \textbf{vertical subspace} \( V_pP \coloneq \ker(\pi_*) \) at a point \( p \in P \), which serves as a vector subspace of the tangent space of \( P \).
 It is noteworthy that each fundamental vector \( X^A_p \in V_pP \), since \( \pi_* (X^A_p) = 0 \) by construction.
 
 A \textbf{connection} on a principal bundle \( P \xrightarrow{\pi} M \) is defined as a decomposition of the tangent space \( T_pP \) into a vertical subspace \( V_pP \) and a \textbf{horizontal subspace} \( H_pP \). This is achieved by choosing a complement to the vertical subspace at each point \( p \in P \) such that \cite{DudekEhreshmanntheoryconnectionprincipalbundlecompendiumphysicists2018}:
-\newpage
 \begin{enumerate}[label=(\roman*), labelsep=1em, leftmargin=2.5em]
   \item \( T_pP = H_pP \oplus V_pP \)
 
