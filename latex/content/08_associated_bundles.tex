@@ -1,0 +1,399 @@
+
+
+\chapter{Associated Bundles}
+
+Associated bundles are a way to construct vector bundles that are associated in a precise manner to a given principal bundle. They play a crucial role in gauge theories, as they provide the mathematical framework for describing matter fields that transform under the action of a gauge group.
+
+\section{Definition of Associated Bundles}
+
+Given a G-principal bundle $\pi : P \rightarrow M$ and a smooth manifold $F$ with a left G-action $\triangleright : G \times F \rightarrow F$, an associated bundle $\pi_F : P_F \rightarrow M$ is defined as follows:
+
+\begin{itemize}
+  \item We define the equivalence relation:
+  \[
+  (p, f) \sim_G (p \triangleleft g, g^{-1} \triangleright f) \quad \forall p \in P, f \in F, g \in G.
+  \]
+\item The associated bundle $P_F$ is the quotient space:
+  $$(P \times F) / \sim_G=: P_F $$
+  \item The projection map $\pi_F : P_F \rightarrow M$ is defined by:
+  \[
+  \pi_F([p, f]) = \pi(p),
+  \]
+  where $[p, f]$ denotes the equivalence class of $(p, f)$ under the defined relation.
+\end{itemize}
+
+It is instructive to recall that the fiber of the principal bundle $P$ is the group $G$ itself. Therefore taking the modulo of $P$ by the group action effectively reproduces the base Manifold. Now roughly speaking, attaching to it a different fiber $F$ with a group action of $G$ results in a new bundle with fiber $F$ over the same base manifold $M$. 
+
+The projection is well-defined, since $\pi_F([p,f]) = \pi(p) = \pi(p \triangleleft g) = \pi_F([p \triangleleft g, g^{-1} \triangleright f ])$ due to the properties of the principal bundle. 
+
+To prove that this construction indeed yields a fiber bundle with typical
+fiber $F$, consider a local trivialization of the principal bundle.
+Let $\{U_i\}$ be an open cover of $M$ over which $P$ admits smooth
+local sections $s_i : U_i \to P$, and let
+\[
+\phi_i : \pi^{-1}(U_i) \to U_i \times G,
+\qquad
+p \mapsto \bigl(\pi(p), g_i(p)\bigr),
+\]
+be the corresponding local trivializations, where
+$p = s_i(\pi(p)) \triangleleft g_i(p)$ is unique.
+Using this, define a map
+\[
+\psi_i : U_i \times F \longrightarrow \pi_F^{-1}(U_i), \qquad
+\psi_i(x,f) := [\,s_i(x),\, f\,].
+\]
+This map is smooth and surjective.  
+To show that it is a trivialization, define its inverse
+\[
+\psi_i^{-1}([p,f])
+:= \bigl( \pi(p),\, g_i(p)^{-1} \triangleright f \bigr).
+\]
+
+This is well-defined: if $(p,f) \sim_G (p \triangleleft g, g^{-1}\triangleright f)$,
+then
+\[
+p = s_i(\pi(p))\triangleleft g_i(p)
+\quad\Longrightarrow\quad
+p \triangleleft g
+= s_i(\pi(p))\triangleleft \bigl(g_i(p)g\bigr),
+\]
+so the $G$–component transforms as $g_i(p) \mapsto g_i(p)g$, and therefore
+\[
+(g_i(p)g)^{-1} \triangleright (g^{-1}\triangleright f)
+= g^{-1}g_i(p)^{-1} \triangleright g^{-1}\triangleright f
+= g_i(p)^{-1}\triangleright f,
+\]
+so the expression is independent of the chosen representative.
+Hence $\psi_i$ is a smooth bijection with smooth inverse, and
+\[
+\pi_F \circ \psi_i(x,f) = x,
+\]
+so $(U_i, \psi_i)$ is a local trivialization of $P_F$.
+In particular,
+\[
+\pi_F^{-1}(x) \cong F
+\qquad\text{for all } x\in M.
+\]
+
+Thus $\pi_F : P_F \to M$ is a smooth fiber bundle with typical fiber $F$.
+
+\subsection{The tangent bundle as an associated bundle}
+First, consider the frame bundle $LM$ of a smooth manifold $M$. The frame bundle is a principal $GL(d,\mathbb{R})$-bundle over $M$, where $d = \dim M$. The fiber at each point $x \in M$ consists of all ordered bases (frames) of the tangent space $T_xM$. The right action of $GL(d,\mathbb{R})$ on the frame bundle was defined as:
+$$
+\begin{aligned}
+& \triangleleft: G L(d, \mathbb{R}) \times L M \rightarrow L M \\
+& \left(e_1, \ldots, e_d\right) \triangleleft g:=\left(g^m_1 e_m, g^m_2 e_m, \cdots, g^m_d e_m\right)
+\end{aligned}
+$$
+
+Now construct a associated fiber bundle with typical fiber $\mathbb{R}^d$ and the standard representation of $GL(d,\mathbb{R})$ on $\mathbb{R}^d$. The left action of $GL(d,\mathbb{R})$ on $\mathbb{R}^d$ can be defined as:
+$$\triangleright: G L(d, \mathbb{R}) \times F\rightarrow F; \quad (g \triangleright f)^a:= g^a_b f^b$$
+Notice that this coincides with the usual definition of how vectors and there components transform under a change of basis. In the discussion of the tangent bundle in chapter 2, this was a condition that was a conclusion. Notice that from the perspective of associated bundles, this is a choice for definition of a left action. As we will see in following sections, this choice is not unique, and different choices lead to different associated bundles.
+
+For the definition given above, the associated bundle is $\pi_{\mathbb{R}^d} : LM_{\mathbb{R}^d} \rightarrow M$. There exists a natural isomorphism $u : LM_{\mathbb{R}^d} \rightarrow TM$
+\[
+\begin{aligned}
+u : LM_{\mathbb{R}^d} \equiv (LM \times \mathbb{R}^d)/{\sim_G}
+  &\longrightarrow TM \\[0.6em]
+[e,f]
+  &\longmapsto f^{a} e_{a}
+\end{aligned}
+\]
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.3, every node/.style={scale=1.1}]
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=4em, ampersand replacement=\&] {
+    LM_{\mathbb{R}^d} \& TM \\
+    M \& M \\
+  };
+
+  \path[->]
+    (m-1-1) edge node[left]  {$\pi_{\mathbb{R}^d}$} (m-2-1)
+    (m-1-1) edge node[above] {$u$}            (m-1-2)
+    (m-1-2) edge node[right] {$\pi_{TM}$}               (m-2-2)
+    (m-2-1) edge node[below] {$\mathrm{id}_M$}     (m-2-2);
+\end{tikzpicture}
+\caption{Commutative diagram exhibiting the tangent bundle $TM$ as the associated bundle
+$LM_{\mathbb{R}^d}$ of the frame bundle.}
+\end{figure}
+
+This map is invertible, since for any $X \in TM$ any choice of frame $e \in LM$ at $\pi_{TM}(X)$ gives a unique $f \in \mathbb{R}^d$ such that $X = f^a e_a$. The map is well-defined, since for any other representative $(e \triangleleft g, g^{-1} \triangleright f)$ reproduces the equivalence class $[e,f]$.
+
+\subsection{Tensor bundles as associated bundles}
+Equivalently to the tangent bundle, one can simply extend this construction to bundles associated to the frame bundle $LM$ with typical fiber
+$$
+F=\left(\mathbb{R}^d\right)^{p} \times\left(\mathbb{R}^{d^*}\right)^{q}
+$$
+define a left-actoin $\quad \triangleright: G L(1,1)) \times F \rightarrow F$
+by
+$$
+(g \triangleright f)^{i_1 \cdots i_p}{}_{j_1 \cdots j_q}
+  := g^{i_1}{}_{k_1} \cdots g^{i_p}{}_{k_p}
+     (g^{-1})^{l_1}{}_{j_1} \cdots (g^{-1})^{l_q}{}_{j_q}\,
+     f^{k_1 \cdots k_p}{}_{l_1 \cdots l_q}.
+$$
+As above this bundle $\pi_F : LM_F \rightarrow M$ is isomorphic to the $(p,q)$-tensor bundle $\pi : T^p_qM \rightarrow M$. This definition formalizes, what in physics is often taken as given. Intuitively, the coordinate transformations is a choice of a different frame in the principal bundle, and each associated bundle must follow the transformation rules defined by the left action of the group on the typical fiber.
+
+\subsection{Tensor densities as associated bundles}
+Consider an associated bundle to the frame bundle $LM$ with the same typical fiber as the tensor bundle above
+$$
+F=\left(\mathbb{R}^d\right)^{p} \times\left(\mathbb{R}^{d^*}\right)^{q}
+$$
+But now define a different left action $\quad \triangleright: G L(1,1)) \times F \rightarrow F$
+by
+$$
+(g \triangleright f)^{i_1 \cdots i_p}{}_{j_1 \cdots j_q}
+  := \left(\det g^{-1}\right)^\omega g^{i_1}{}_{k_1} \cdots g^{i_p}{}_{k_p}
+     (g^{-1})^{l_1}{}_{j_1} \cdots (g^{-1})^{l_q}{}_{j_q}\,
+     f^{k_1 \cdots k_p}{}_{l_1 \cdots l_q}.
+$$
+for some $\omega \in \mathbb{Z}$. Then the bundle $\pi_F : LM_F \rightarrow M$ is called the bundle of $(p,q)$-tensor densities of weight $\omega$ over $M$.
+Choosing $F=\mathbb{R}$ and $\omega=1$ yields the bundle of scalar densities of 
+weight~$1$. The significance of tensor densities becomes clear when considering 
+integration on manifolds. Ordinary tensor fields do not transform in a way that 
+makes their coordinate expressions compatible with a well-defined notion of 
+integration. What \emph{is} integrable on a manifold are \emph{densities}, 
+i.e.\ sections of associated bundles whose transition functions include a power 
+of the determinant of the Jacobian. The weight~$\omega$ in the $GL(d)$--action 
+above precisely controls how such objects respond to a change of frame. For 
+instance, scalar densities of weight $1$ transform as
+\[
+\rho \;\mapsto\; (\det g^{-1})\,\rho ,
+\]
+ensuring that the combination $\rho\,\mathrm{d}^dx$ is invariantly defined and 
+can therefore be integrated over~$M$.
+
+This is directly visible in General Relativity. Under a coordinate transformation with Jacobian matrix
+\[
+g^{i}{}_{j} = \frac{\partial x^{i}}{\partial x^{\prime j}},
+\]
+the metric tensor $\gamma$ transforms as
+\[
+\gamma'_{ij}
+  = g^{k}{}_{i}\, g^{l}{}_{j}\, \gamma_{kl},
+\]
+and therefore its determinant transforms as
+\[
+\det \gamma'
+  = (\det g^{k}{}_{i})^{2}\, \det \gamma
+  = (\det g^{-1})^{2} \det \gamma .
+\]
+Thus $\det \gamma$ is a \emph{scalar density of weight~$2$}, and consequently
+$\sqrt{|\det \gamma|}$ is a scalar density of weight~$1$. This is exactly the
+object needed to compensate for the transformation of the coordinate measure,
+so that
+\[
+\sqrt{-\gamma}\,\mathrm{d}^{4}x
+\]
+is invariantly defined. Hence the Einstein--Hilbert action is written as
+\[
+\int_{M} \sqrt{-\gamma}\, R\, \mathrm{d}^{4}x.
+\]
+which is independent of any coordinate choice.
+
+The introduction of tensor densities is therefore not merely formal: it 
+captures the geometric fact that integration on manifolds is only well 
+defined for objects that transform as densities. This also explains why the 
+\emph{Lagrangian density} in field theory is called a density: it is a section 
+of a weight-$1$ scalar density bundle, ensuring that the action integral is 
+well defined. The relation to differential forms and volume elements will be 
+discussed further in the context of integration on manifolds.
+
+
+\section{Associated bundle maps}
+Above associated bundles were constructed as fiber bundles which carry additional structure induced by a principal bundle. Therefore we now define maps between associated bundles which preserve this additional structure.
+To define these maps consider two associated bundles, with the same fiber $F$, but associated to arbitrary principal bundles $\pi : P \rightarrow M$ and $\pi' : P' \rightarrow M'$ with the same structure group $G$.
+An associated bundle map $(\tilde{u},\tilde{h}$ is a bundle map which can be constructed a principal bundle map between the underlying principal bundles $(u,h)$.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1.3, every node/.style={scale=1.1}]
+  \matrix (m) [matrix of math nodes,
+               row sep=3.5em,
+               column sep=4.5em,
+               ampersand replacement=\&] {
+    P   \& P'   \\
+    P   \& P'   \\
+    M   \& M'   \\
+  };
+
+  % vertical arrows left column
+  \path[->] (m-2-1) edge node[left]  {$\triangleleft G$} (m-1-1);
+  \path[->] (m-2-1) edge node[left]  {$\pi$}            (m-3-1);
+
+  % vertical arrows right column
+  \path[->] (m-2-2) edge node[right] {$\triangleleft' G$} (m-1-2);
+  \path[->] (m-2-2) edge node[right] {$\pi'$}             (m-3-2);
+
+  % horizontal arrows (middle and bottom rows)
+  \path[->] (m-1-1) edge node[above] {$u$} (m-1-2);
+  \path[->] (m-2-1) edge node[above] {$u$} (m-2-2);
+  \path[->] (m-3-1) edge node[above] {$h$}         (m-3-2);
+\end{tikzpicture}
+
+\[
+\tilde{u}(p \triangleleft g) = \tilde{u}(p)\triangleleft' g,
+\qquad
+\pi' \circ \tilde{u} = h \circ \pi .
+\]
+
+\caption{A morphism of principal $G$-bundles.}
+\end{figure}
+
+Then the associated bundle map $(\tilde{u},\tilde{h})$ is defined as:
+\[
+\begin{aligned}
+\tilde{u} : P_F &\longrightarrow P'_F
+&\qquad
+\tilde{h} : M &\longrightarrow M' \\[0.3em]
+  [p,f] &\longmapsto \tilde{u}([p,f])\coloneq [u(p), f]
+& m   &\longmapsto h(m)
+\end{aligned}
+\]
+This definition is indeed necessary, since two $F$–fiber bundles may be 
+isomorphic as bundles but still fail to be isomorphic as associated 
+bundles. This situation occurs when the underlying principal bundles are 
+not isomorphic as \emph{principal} $G$–bundles: even though there may exist 
+a bundle isomorphism between the total spaces, it might not respect the 
+$G$–action. In that case, the formula
+\[
+[p,f] \longmapsto [u(p),f]
+\]
+is not well defined on the associated bundles. For 
+$(p,f)\sim (p\triangleleft g,\, g^{-1}\triangleright f)$ we obtain
+\[
+[u(p),f]
+\qquad\text{and}\qquad
+[u(p\triangleleft g),\, g^{-1}\triangleright f],
+\]
+and these coincide precisely when
+\[
+u(p\triangleleft g)=u(p)\triangleleft' g,
+\]
+i.e.\ when $u$ is $G$–equivariant. Thus $G$–equivariance is exactly the 
+condition ensuring that the induced map between associated bundles is 
+well defined.
+
+\section{Sections on associated bundles}
+This section discusses the relation between sections of associated bundles and equivariant maps on the underlying principal bundle. We will proof the following theorem:
+
+Given a principal $G$-bundle $\pi : P \rightarrow M$ and an associated bundle $\pi_F : P_F \rightarrow M$ with typical fiber $F$. There exists a bijective correspondence between sections $\sigma_F \in \Gamma(P_F)$ of the associated bundle and G-equivariant functions $\phi : P \rightarrow F$ satisfying $\phi(p\triangleleft g) = g^{-1}\triangleright\phi(p)$. 
+
+\begin{proof}
+(a) Given a $G$–equivariant map $\phi : P \to F$, define a section
+\[
+\sigma_\phi : M \longrightarrow P_F,
+\qquad
+\sigma_\phi(x) \coloneqq [p,\,\phi(p)],
+\]
+where $p$ is any element of the fiber $\pi^{-1}(x)$.
+
+\medskip
+
+To see that this is well defined, let $p' \in \pi^{-1}(x)$.  
+Since $P$ is a principal $G$–bundle, there exists a unique $g \in G$ such that
+$p' = p \triangleleft g$. Then
+\[
+[p',\phi(p')] 
+  = [p \triangleleft g,\, \phi(p \triangleleft g)]
+  = [p \triangleleft g,\, g^{-1}\!\triangleright \phi(p)]
+  = [p,\phi(p)],
+\]
+where the last equality uses the $G$–equivariance of $\phi$.  
+Thus $\sigma_\phi$ is independent of the choice of $p$ and therefore well defined.
+
+\medskip
+
+(b) Conversely, given a section $\sigma : M \to P_F$, we construct a map
+$\phi_\sigma : P \to F$.  
+For each $p \in P$, the value $\sigma(\pi(p))$ lies in the fiber
+$\pi_F^{-1}(\pi(p)) \subset P_F$.  
+Define
+\[
+\phi_\sigma(p) \coloneqq (i_p)^{-1}\bigl(\sigma(\pi(p))\bigr),
+\]
+where
+\[
+i_p : F \longrightarrow \pi_F^{-1}(\pi(p)), 
+\qquad
+i_p(f) \coloneqq [p,f].
+\]
+
+The map $i_p$ is a bijection: every element of
+$\pi_F^{-1}(\pi(p))$ has the form $[p,f]$ for a unique $f \in F$.  
+Furthermore, for any $g \in G$,
+\[
+i_p(f)
+  = [p,f]
+  = [p \triangleleft g,\; g^{-1}\!\triangleright f]
+  = i_{p\triangleleft g}(g^{-1}\!\triangleright f),
+\]
+which describes how $i_p$ transforms when $p$ is replaced by another point in
+the same principal fiber.
+
+\medskip
+
+We now show that $\phi_\sigma$ is $G$–equivariant. For any $p \in P$ and
+$g \in G$,
+\[
+\begin{aligned}
+\phi_\sigma(p \triangleleft g)
+  &= (i_{p\triangleleft g})^{-1}\!\bigl(\sigma(\pi(p \triangleleft g))\bigr) \\
+  &= (i_{p\triangleleft g})^{-1}\!\bigl(\sigma(\pi(p))\bigr) \\
+  &= (i_{p\triangleleft g})^{-1}\!\bigl(i_p(\phi_\sigma(p))\bigr) \\
+  &= (i_{p\triangleleft g})^{-1}\!\bigl(i_{p\triangleleft g}(g^{-1}\!\triangleright \phi_\sigma(p))\bigr) \\
+  &= g^{-1}\!\triangleright \phi_\sigma(p),
+\end{aligned}
+\]
+using the transformation rule above.  
+Thus $\phi_\sigma$ is $G$–equivariant.
+
+\medskip
+
+(c) Finally, we show that the two constructions are inverse to one another.
+
+\smallskip
+
+\noindent\textbf{(1) Recovering $\sigma$ from $\phi_\sigma$.}  
+Let $\sigma : M \to P_F$ be a section. For $x \in M$ choose any
+$p \in \pi^{-1}(x)$. Then
+\[
+\begin{aligned}
+\sigma_{\phi_\sigma}(x)
+  &= [p,\phi_\sigma(p)] \\
+  &= \bigl[p,(i_p)^{-1}(\sigma(\pi(p)))\bigr] \\
+  &= \sigma(\pi(p)) \\
+  &= \sigma(x),
+\end{aligned}
+\]
+because $\pi(p)=x$ and $i_p$ is a bijection onto the fiber over $x$.
+
+\smallskip
+
+\noindent\textbf{(2) Recovering $\phi$ from $\sigma_\phi$.}  
+Let $\phi : P \to F$ be $G$–equivariant. Then for any $p \in P$,
+\[
+\begin{aligned}
+\phi_{\sigma_\phi}(p)
+  &= (i_p)^{-1}\!\bigl(\sigma_\phi(\pi(p))\bigr) \\
+  &= (i_p)^{-1}\!\bigl([p,\phi(p)]\bigr).
+\end{aligned}
+\]
+Since $i_p(f) = [p,f]$, the only $f$ satisfying $[p,f] = [p,\phi(p)]$ is
+$f=\phi(p)$. Therefore
+\[
+\phi_{\sigma_\phi}(p) = \phi(p),
+\]
+so $\phi_{\sigma_\phi} = \phi$.
+
+\medskip
+
+We conclude that
+\[
+\phi \longmapsto \sigma_\phi,
+\qquad
+\sigma \longmapsto \phi_\sigma
+\]
+are mutually inverse bijections between $G$–equivariant maps $P \to F$ and
+sections of the associated bundle $P_F$.
+\end{proof}
