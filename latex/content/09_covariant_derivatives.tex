@@ -1,0 +1,16 @@
+\chapter{Covariant Derivatives}
+
+Covariant derivatives are a fundamental concept in differential geometry and gauge theories, providing a way to differentiate sections of associated vector bundles while respecting the underlying geometric structure. In this chapter, the notion of covariant derivatives will be introduced, and their relationship with connections on principal bundles will be explored.
+
+Recall that sections of bundles associated to a G-principal bundle $\pi : P \rightarrow M$ are equivalent to G-eqivariant functions $\phi : P \rightarrow F$, where F is the typical fiber of the associated bundle. For the definition of the covariant derivative, we first identify the equivarianz condition for finite dimensional linear left actions. This imideatly restricts us to the discussion of associated vector bundles, i.e. $F$ is a finite dimensional vector space.
+
+For any $g\in G$ close to the identity, we can write the equivariant condition as:
+$$\phi(p \triangleleft \exp (A t))=\exp (-A t) \triangleright \phi(p)$$
+for $A \in T_e G$ and $t \in \mathbb{R}$ small enough. Differentiating both sides with respect to $t$ at $t=0$ yields:
+
+$$
+\begin{align*}
+  \frac{d}{dt} \phi(p \triangleleft \exp (A t)) \bigg|_{t=0} &= \frac{d}{dt} \left( \exp (-A t) \triangleright \phi(p) \right) \bigg|_{t=0}
+\end{align*}
+$$
+
